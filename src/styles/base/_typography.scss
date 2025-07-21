@@ -1,9 +1,13 @@
-@use '../abstracts';
+// @use '../abstracts'; // uncomment once mixins / variables are needed
 
 /**
  * Basic typography style for copy text
  */
 body {
     color: var(--color-primary);
-    font: normal 125% / 1.4 'Inter';
+    font:
+        normal 125% / 1.4 'Inter',
+        Arial,
+        Helvetica,
+        sans-serif;
 }
