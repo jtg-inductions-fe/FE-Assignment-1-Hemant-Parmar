@@ -1,0 +1,9 @@
+@use '../abstracts';
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+    color: var(--color-primary);
+    font: normal 125% / 1.4 'Inter';
+}

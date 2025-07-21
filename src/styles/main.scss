@@ -1,1 +1,19 @@
-// TODO: Add styles as per the requirement
+@charset "UTF-8";
+
+// 1. Base stuff
+@use 'base';
+
+// 2. Vendors
+@use 'vendors';
+
+// 3. Layout-related sections
+@use 'layout';
+
+// 4. Components
+@use 'components';
+
+// 5. Pages
+@use 'pages';
+
+// 6. Themes
+@use 'themes';

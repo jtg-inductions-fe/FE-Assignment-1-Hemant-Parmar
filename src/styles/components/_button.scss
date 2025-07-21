@@ -1,0 +1,19 @@
+@use '../abstracts';
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn-primary {
+    @include abstracts.rounded-btn(2em);
+
+    color: white;
+    background-color: var(--color-primary);
+    border: none;
+}
+
+.btn-secondary {
+    @include abstracts.rounded-btn(2em);
+
+    color: var(--color-dark);
+}
