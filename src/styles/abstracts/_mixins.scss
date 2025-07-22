@@ -7,7 +7,7 @@
     @if $min-vw == $max-vw {
         @error 'fs-fluid(): $min-vw and $max-vw must differ';
     }
-    $factor: math.div(1, ($max-vw - $min-vw)) * ($max-value - $min-value);
+    $factor: math.div(($max-value - $min-value), ($max-vw - $min-vw));
     $calc-value: unquote(
         '#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }'
     );
@@ -20,12 +20,6 @@
     );
 }
 
-@mixin rounded-btn($height, $width: 100%) {
-    height: $height;
-    width: $width;
-    border-radius: math.div($height, 2);
-}
-
 $breakpoints: (
     'medium': f.em(700),
     'large': f.em(1200),
@@ -33,12 +27,6 @@ $breakpoints: (
 
 @mixin breakpoint($size) {
     @media (min-width: map.get($breakpoints, $size)) {
-        @content;
-    }
-}
-
-@mixin breakpoint-down($size) {
-    @media (max-width: map.get($breakpoints, $size)) {
         @content;
     }
 }

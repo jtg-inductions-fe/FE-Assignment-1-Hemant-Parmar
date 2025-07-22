@@ -3,15 +3,13 @@
 // -----------------------------------------------------------------------------
 
 /// Colors in the design file
-:root {
-    --color-primary: #5d50c6;
-    --color-secondary: #f85e9f;
-    --color-newsletter-bg: #facd4914;
-    --color-orange: #ff5722;
-    --color-yellow: #facd49;
-    --color-black: #191825;
-    --color-dark: #222831;
-}
+$color-primary: #5d50c6;
+$color-secondary: #f85e9f;
+$color-newsletter-bg: #facd4914;
+$color-orange: #ff5722;
+$color-yellow: #facd49;
+$color-black: #191825;
+$color-dark: #222831;
 
 /// Container's maximum width
 /// @type Length
