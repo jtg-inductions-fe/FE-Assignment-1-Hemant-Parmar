@@ -1,7 +1,7 @@
 /*
 * This order is for a specific reason.
-* we follow the order (reset -> fonts -> base -> helpers -> typography)
-* Don't reorder it.
+* We follow the order: reset → fonts → base → helpers → typography.
+* Do **not** reorder these forwards – the cascade relies on it.
 */
 
 @forward 'reset';
