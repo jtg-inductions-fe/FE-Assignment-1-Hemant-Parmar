@@ -21,8 +21,8 @@
 }
 
 $breakpoints: (
-    'medium': f.rem(700),
-    'large': f.rem(1200),
+    'medium': f.rem(1024),
+    'large': f.rem(1440),
 ) !default;
 
 @mixin breakpoint($size) {

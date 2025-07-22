@@ -1,9 +1,10 @@
 /*
 * This order is for a specific reason.
-* We follow the order: reset → fonts → base → helpers → typography.
+* We follow the order: normalize → fonts → base → helpers → typography.
 * Do **not** reorder these forwards – the cascade relies on it.
 */
 
+@forward 'normalize';
 @forward 'fonts';
 @forward 'base';
 @forward 'helpers';
