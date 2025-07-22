@@ -21,9 +21,9 @@
 }
 
 $breakpoints: (
-    'medium': f.em(700),
-    'large': f.em(1200),
-);
+    'medium': f.rem(700),
+    'large': f.rem(1200),
+) !default;
 
 @mixin breakpoint($size) {
     @media (min-width: map.get($breakpoints, $size)) {

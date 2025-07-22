@@ -4,7 +4,6 @@
 * Do **not** reorder these forwards – the cascade relies on it.
 */
 
-@forward 'reset';
 @forward 'fonts';
 @forward 'base';
 @forward 'helpers';

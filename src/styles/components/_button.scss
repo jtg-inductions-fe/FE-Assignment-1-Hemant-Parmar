@@ -4,28 +4,29 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
-.btn-primary {
-    @include abstracts.rounded-btn(2em);
-
-    color: white;
-    background-color: var(--color-primary);
-    border: none;
+// Generic button class
+.btn {
+    height: 2em;
+    width: 100%;
+    border-radius: 1em;
     cursor: pointer;
 
     &:focus-visible {
-        outline: 2px solid var(--color-black);
+        outline: 2px solid abstracts.$color-black;
         outline-offset: 2px;
     }
 }
 
+.btn-primary {
+    @extend .btn;
+
+    color: white;
+    background-color: abstracts.$color-primary;
+    border: none;
+}
+
 .btn-secondary {
-    @include abstracts.rounded-btn(2em);
+    @extend .btn;
 
-    color: var(--color-dark);
-    cursor: pointer;
-
-    &:focus-visible {
-        outline: 2px solid var(--color-black);
-        outline-offset: 2px;
-    }
+    color: abstracts.$color-dark;
 }
