@@ -1,10 +1,12 @@
+@use '../abstracts';
+
 // -----------------------------------------------------------------------------
 // This file contains all @font-face declarations, if any.
 // -----------------------------------------------------------------------------
 
 @font-face {
     font-family: 'Inter';
-    src: url('#{$base-url}fonts/Inter-VariableFont_opsz,wght.ttf')
+    src: url('#{abstracts.$base-url}fonts/Inter-VariableFont_opsz,wght.ttf')
         format('truetype');
     font-weight: 100 900;
     font-style: normal;
@@ -13,7 +15,7 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url('#{$base-url}fonts/Inter-Italic-VariableFont_opsz,wght.ttf')
+    src: url('#{abstracts.$base-url}fonts/Inter-Italic-VariableFont_opsz,wght.ttf')
         format('truetype');
     font-weight: 100 900;
     font-style: italic;
