@@ -1,3 +1,92 @@
+@use '../abstracts';
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.5rem;
+
+    a {
+        text-decoration: none;
+    }
+
+    button {
+        background: none;
+        border: none;
+        padding: 0;
+
+        @include abstracts.breakpoint('large') {
+            display: none;
+        }
+    }
+
+    &__open[aria-expanded='true'] {
+        opacity: 0;
+
+        + .nav__menu {
+            opacity: 1;
+        }
+    }
+
+    &__close {
+        display: block;
+        margin-inline-start: auto;
+    }
+
+    &__menu {
+        background-color: blur(1rem);
+        position: fixed;
+        inset: 0;
+        padding: 1.5rem;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+
+        @include abstracts.breakpoint('large') {
+            opacity: 1;
+            display: flex;
+            position: static;
+            translate: none;
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+
+        @include abstracts.breakpoint('large') {
+            flex-direction: row;
+        }
+    }
+
+    &__item {
+        list-style-type: none;
+
+        @include abstracts.breakpoint('large') {
+            a {
+                color: rgba(abstracts.$color-black, 0.5);
+            }
+
+            :hover {
+                color: rgba(abstracts.$color-black, 1);
+            }
+        }
+
+        &--btn {
+            list-style-type: none;
+            padding-right: 0;
+            // display: inline-block;
+        }
+    }
+}
+
+hero {
+    padding-top: 2rem;
+}
