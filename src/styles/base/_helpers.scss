@@ -1,42 +1,9 @@
-@use '../abstracts';
-
 // -----------------------------------------------------------------------------
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
 
-/**
- * Clear inner floats
- */
-.clearfix::after {
-    clear: both;
-    content: '';
-    display: table;
-}
-
-/**
- * Main content containers
- * 1. Make the container full-width with a maximum width
- * 2. Center it in the viewport
- * 3. Leave some space on the edges, especially valuable on small screens
- */
+// Main content containers
 .container {
-    max-width: abstracts.$max-width; /* 1 */
-    margin: 0 auto; /* 2 */
-    padding-inline: 1.25rem; /* 3 */
-}
-
-/**
- * Hide element while making it readable for screen readers
- * Shamelessly borrowed from HTML5Boilerplate:
- * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
- */
-.visually-hidden {
-    border: 0;
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+    max-width: 1192px; // Container's maximum width
+    margin: 0 auto;
 }

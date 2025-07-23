@@ -73,7 +73,7 @@ To set up the project on your local environment, follow these steps:
     netlify login
     ```
 
-    You will redirected to a browser for logging in with your credentials.
+    You will be redirected to a browser for logging in with your credentials.
 
 8. **Initialize Netlify**
 

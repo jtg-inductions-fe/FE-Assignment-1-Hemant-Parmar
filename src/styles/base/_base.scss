@@ -8,8 +8,12 @@
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
     background: white;
+    font:
+        normal 125%/1.4 'Inter',
+        Arial,
+        Helvetica,
+        sans-serif;
     color: abstracts.$color-primary;
 }
 
