@@ -2,16 +2,13 @@
 // This file contains all @font-face declarations.
 // -----------------------------------------------------------------------------
 
-// Relative or absolute URL where all assets are served from
-$base-url: '/assets/';
-
 @font-face {
     font-family: 'Inter';
     src:
         local('Inter'),
         local('Inter Variable'),
-        url('#{$base-url}fonts/InterVariable.woff2') format('woff2-variations'),
-        url('#{$base-url}fonts/InterVariable.ttf') format('truetype');
+        url('/assets/fonts/InterVariable.woff2') format('woff2-variations'),
+        url('/assets/fonts/InterVariable.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -22,9 +19,9 @@ $base-url: '/assets/';
     src:
         local('Inter Italic'),
         local('Inter Variable Italic'),
-        url('#{$base-url}fonts/InterVariable-Italic.woff2')
+        url('/assets/fonts/InterVariable-Italic.woff2')
             format('woff2-variations'),
-        url('#{$base-url}fonts/InterVariable-Italic.ttf') format('truetype');
+        url('/assets/fonts/InterVariable-Italic.ttf') format('truetype');
     font-weight: 100 900;
     font-style: italic;
     font-display: swap;
