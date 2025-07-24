@@ -1,51 +1,42 @@
-const breakpoints = {
-    medium: 1024,
-    large: 1440,
-};
+const menuBtn = document.getElementById('menu-btn');
+const nav = document.getElementById('nav');
 
-const openBtn = document.getElementById('openBtn');
-const closeBtn = document.getElementById('closeBtn');
-const media = window.matchMedia(`(min-width: ${breakpoints.large}px)`);
-const navMenu = document.querySelector('.nav__menu');
-const main = document.querySelector('main');
-// const body = document.querySelector('body');
+menuBtn.addEventListener('click', () => {
+    const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
 
-function setupNav(e) {
-    if (e.matches) {
-        // is desktop
-        closeNavMenu();
-        navMenu.removeAttribute('inert');
-    } else {
-        // is mobile or tablet
-        navMenu.setAttribute('inert', '');
-        navMenu.style.transition = 'none';
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    nav.hidden = isOpen;
+
+    // Icon is changed here, for now.
+
+    if (!isOpen) {
+        trapFocus();
     }
-}
-
-function openNavMenu() {
-    openBtn.setAttribute('aria-expanded', 'true');
-    navMenu.removeAttribute('inert');
-    navMenu.removeAttribute('style');
-    main.setAttribute('inert', '');
-    closeBtn.focus();
-}
-
-function closeNavMenu() {
-    openBtn.setAttribute('aria-expanded', 'false');
-    navMenu.setAttribute('inert', '');
-    main.removeAttribute('inert');
-    openBtn.focus();
-
-    setTimeout(() => {
-        navMenu.style.transition = 'none';
-    }, 500);
-}
-
-media.addEventListener('change', function (e) {
-    setupNav(e);
 });
 
-setupNav(media);
+function trapFocus() {
+    const focusable = nav.querySelectorAll(
+        'a, button, [tabindex]:not([tabindex="-1"])',
+    );
+    const last = focusable[focusable.length - 1];
 
-openBtn.addEventListener('click', openNavMenu);
-closeBtn.addEventListener('click', closeNavMenu);
+    document.addEventListener('keydown', function loop(e) {
+        if (menuBtn.getAttribute('aria-expanded') !== 'true') {
+            document.removeEventListener('keydown', loop);
+            return;
+        }
+        if (e.key === 'Tab') {
+            if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                menuBtn.focus(); // jump back to hamburger
+            }
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        menuBtn.setAttribute('aria-expanded', 'false');
+        nav.hidden = true;
+    }
+});

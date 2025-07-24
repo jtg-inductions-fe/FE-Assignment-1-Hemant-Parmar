@@ -4,89 +4,117 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
-.nav {
+.header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding-block: 1.5rem;
+    padding: 2.5rem 1rem;
+    background: aqua; // for test
+    color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
 
-    a {
-        text-decoration: none;
-    }
-
-    button {
-        background: none;
-        border: none;
-        padding: 0;
-
-        @include abstracts.breakpoint('large') {
-            display: none;
-        }
-    }
-
-    &__open[aria-expanded='true'] {
-        opacity: 0;
-
-        + .nav__menu {
-            opacity: 1;
-        }
-    }
-
-    &__close {
+    &__main-logo a {
         display: block;
-        margin-inline-start: auto;
     }
 
-    &__menu {
-        background-color: blur(1rem);
-        position: fixed;
-        inset: 0;
-        padding: 1.5rem;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-
-        @include abstracts.breakpoint('large') {
-            opacity: 1;
-            display: flex;
-            position: static;
-            translate: none;
-        }
-    }
-
-    &__links {
-        display: flex;
-        gap: 1rem;
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
+    &__menu-btn {
         padding: 0;
-
-        @include abstracts.breakpoint('large') {
-            flex-direction: row;
-        }
     }
 
-    &__item {
-        list-style-type: none;
+    /* Navigation menu */
+    &__nav {
+        width: auto;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        right: 0;
+        background: rgba(abstracts.$color-secondary, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 1rem;
+        margin: 2rem;
 
-        @include abstracts.breakpoint('large') {
-            a {
-                color: rgba(abstracts.$color-black, 0.5);
-            }
-
-            :hover {
-                color: rgba(abstracts.$color-black, 1);
-            }
+        &__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
         }
 
-        &--btn {
-            list-style-type: none;
-            padding-right: 0;
-            // display: inline-block;
+        &__list a {
+            color: rgba(abstracts.$color-black, 0.5);
+            text-decoration: none;
+            padding: 1rem;
+            display: block;
+        }
+
+        &__list a:hover {
+            background: #554;
+        }
+        &__list a:focus {
+            background: #555;
+            outline: none;
         }
     }
 }
 
-hero {
-    padding-top: 2rem;
+/* Tablet view */
+@include abstracts.breakpoint-up('medium') {
+    .header {
+        flex-direction: row-reverse;
+
+        // &__btn {
+        //     z-index: ;
+        // }
+    }
+}
+
+/* Desktop view */
+@include abstracts.breakpoint-up('large') {
+    .header {
+        padding-right: 0;
+
+        &__menu-btn {
+            display: none;
+        }
+
+        &__nav {
+            display: block;
+            width: auto;
+            position: static;
+            background: transparent;
+            margin: 0;
+
+            &__list {
+                flex-direction: row;
+                background: transparent;
+            }
+
+            &__list a {
+                padding: 1.25rem 2rem;
+                font-size: abstracts.rem(14);
+                font-weight: bold;
+            }
+
+            &__btn {
+                padding: 0;
+
+                a {
+                    padding: 1rem 2rem;
+                }
+
+                &.btn-secondary {
+                    color: abstracts.$color-dark;
+                    margin-left: 12rem;
+                }
+
+                &.btn-secondary {
+                    color: white;
+                }
+            }
+        }
+    }
 }

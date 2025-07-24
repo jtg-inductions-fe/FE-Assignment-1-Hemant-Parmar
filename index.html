@@ -13,62 +13,46 @@
     </head>
     <body>
         <!-- header section  -->
-        <header class="container nav">
-            <div class="image-container main-logo-container">
+        <header class="container header">
+            <div class="header__main-logo">
                 <a href="#">
                     <img src="assets/Icons/travlog-logo.svg" alt="Main logo" />
                 </a>
             </div>
 
-            <!-- nav menu  -->
-            <span id="nav-label" hidden>Navigation</span>
-
             <button
-                id="openBtn"
-                class="image-container nav__open"
+                id="menu-btn"
+                class="header__menu-btn"
+                aria-controls="nav"
                 aria-expanded="false"
-                aria-labelledby="nav-label"
+                aria-label="Toggle navigation"
             >
                 <img src="assets/Icons/hamburger-icon.svg" alt="Menu" />
             </button>
 
-            <div class="nav__menu" role="dialog">
-                <button
-                    id="closeBtn"
-                    class="image-container nav__close"
-                    aria-label="Close"
-                >
-                    <img src="assets/Icons/cross-icon.svg" alt="Menu" />
-                </button>
-
-                <ul class="nav__links">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link">Home</a>
+            <nav id="nav" class="header__nav" hidden>
+                <ul class="header__nav__list">
+                    <li>
+                        <a href="#home">Home</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="#discover" class="nav__link">Discover</a>
+                    <li>
+                        <a href="#discover">Discover</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="#special-deals" class="nav__link"
-                            >Special deals</a
-                        >
+                    <li>
+                        <a href="#special-deals">Special deals</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contact</a>
+                    <li>
+                        <a href="#contact">Contact</a>
                     </li>
 
-                    <li class="nav__item--btn">
-                        <a href="#" class="nav__link"
-                            ><div class="btn-secondary">Log In</div></a
-                        >
+                    <li class="header__nav__btn btn-secondary">
+                        <a href="#">Log In</a>
                     </li>
-                    <li class="nav__item--btn">
-                        <a href="#" class="nav__link"
-                            ><div class="btn-primary">Sign Up</div></a
-                        >
+                    <li class="header__nav__btn btn-primary">
+                        <a href="#">Sign Up</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </header>
 
         <main></main>
