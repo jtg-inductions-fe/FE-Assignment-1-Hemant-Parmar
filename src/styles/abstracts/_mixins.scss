@@ -1,16 +1,11 @@
-@use 'functions' as f;
+@use 'variables' as v;
 @use 'sass:math';
 @use 'sass:map';
 
-$breakpoint-size: (
-    'medium': f.rem(1024),
-    'large': f.rem(1440),
-);
-
 // Mixin to simplify using media queries with mobile first approach
 // It will be used like: breakpoint('large') {...}
-@mixin breakpoint($size) {
-    @media (min-width: map.get($breakpoint-size, $size)) {
+@mixin breakpoint-up($size) {
+    @media (min-width: map.get(v.$breakpoint-size, $size)) {
         @content;
     }
 }

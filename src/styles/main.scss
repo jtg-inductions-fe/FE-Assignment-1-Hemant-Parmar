@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-// 1. Base stuff (normalize is inside base folder itself)
-@use 'base';
-
-// 2. Vendors
+// 1. Vendors
 @use 'vendors';
+
+// 2. Base stuff (normalize is inside base folder itself)
+@use 'base';
 
 // 3. Components
 @use 'components';

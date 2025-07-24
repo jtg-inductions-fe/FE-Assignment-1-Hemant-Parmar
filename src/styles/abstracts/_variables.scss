@@ -1,3 +1,5 @@
+@use 'functions' as f;
+
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
@@ -10,3 +12,9 @@ $color-orange: #ff5722;
 $color-yellow: #facd49;
 $color-black: #191825;
 $color-dark: #222831;
+
+/// Breakpoint sizes in the design file
+$breakpoint-size: (
+    'medium': f.rem(1024),
+    'large': f.rem(1440),
+);
