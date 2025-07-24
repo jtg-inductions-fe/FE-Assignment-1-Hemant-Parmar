@@ -10,7 +10,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 2.5rem 1rem;
-    background: aqua; // for test
     color: white;
     position: sticky;
     top: 0;
@@ -22,6 +21,15 @@
 
     &__menu-btn {
         padding: 0;
+
+        // To switch the images on clicking
+        &[aria-expanded='true'] img {
+            content: url('/assets/Icons/cross-icon.svg');
+        }
+
+        &[aria-expanded='false'] img {
+            content: url('/assets/Icons/hamburger-icon.svg');
+        }
     }
 
     /* Navigation menu */
@@ -51,11 +59,35 @@
             display: block;
         }
 
-        &__list a:hover {
-            background: #554;
+        &__btn {
+            margin: 0.5rem;
+            padding-inline: 1rem;
+
+            a {
+                padding: 0.75rem;
+            }
+
+            &:hover {
+                filter: sepia(2);
+            }
         }
+
+        &__btn.btn-secondary a {
+            color: abstracts.$color-dark;
+
+            &:hover,
+            &:focus {
+                color: abstracts.$color-secondary;
+            }
+        }
+
+        &__btn.btn-primary a {
+            color: white;
+        }
+
+        &__list a:hover,
         &__list a:focus {
-            background: #555;
+            color: abstracts.$color-dark;
             outline: none;
         }
     }
@@ -65,16 +97,33 @@
 @include abstracts.breakpoint-up('medium') {
     .header {
         flex-direction: row-reverse;
+        padding: 2rem 4.5rem;
 
-        // &__btn {
-        //     z-index: ;
-        // }
+        &__nav__btn {
+            margin: 0;
+        }
+    }
+
+    #tablet-btn-container {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+        a {
+            display: block;
+            padding: 0.75rem;
+            text-decoration: none;
+            font-size: abstracts.rem(14);
+            font-weight: bold;
+        }
     }
 }
 
 /* Desktop view */
 @include abstracts.breakpoint-up('large') {
     .header {
+        flex-direction: row;
         padding-right: 0;
 
         &__menu-btn {
@@ -115,6 +164,10 @@
                     color: white;
                 }
             }
+        }
+
+        #tablet-btn-container {
+            display: none;
         }
     }
 }
