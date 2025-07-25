@@ -1,0 +1,94 @@
+@use '../abstracts';
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the hero of the site/application.
+// -----------------------------------------------------------------------------
+
+.hero {
+    padding: 1.8rem 1rem;
+    display: grid;
+    gap: 2rem;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__explore {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        color: abstracts.$color-secondary;
+        font-size: abstracts.rem(14);
+        font-weight: bold;
+        line-height: 120%;
+
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
+        padding: abstracts.rem(18) 2rem;
+        border-radius: 1.75rem;
+    }
+
+    &__tagline {
+        font-size: abstracts.rem(40);
+        font-weight: bold;
+        color: black;
+        line-height: 120%;
+        margin-top: 1rem;
+
+        em {
+            font-style: normal;
+            color: abstracts.$color-secondary;
+        }
+    }
+
+    &__text {
+        color: rgba(abstracts.$color-black, 0.5);
+        font-size: 1rem;
+        line-height: 160%;
+        margin-top: 1.5rem;
+    }
+
+    &__btn {
+        width: 100%;
+        font-size: abstracts.rem(14);
+        font-weight: bold;
+        letter-spacing: 0%;
+        padding: 0;
+
+        &:hover,
+        &:focus {
+            filter: sepia(2);
+        }
+
+        &.btn-primary {
+            height: 4rem;
+            border-radius: 2rem;
+            margin-top: 2rem;
+            box-shadow:
+                0px 0px 0px 0px #0000001a,
+                0px 5px 11px 0px #0000001a,
+                0px 20px 20px 0px #00000017,
+                0px 45px 27px 0px #0000000d,
+                0px 81px 32px 0px #00000003,
+                0px 126px 35px 0px #00000000;
+        }
+
+        &.btn-secondary {
+            height: 4.5rem;
+            border-radius: 2.25rem;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            border: solid 1px abstracts.$color-light;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
