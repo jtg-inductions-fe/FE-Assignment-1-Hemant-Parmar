@@ -14,21 +14,26 @@
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 1000;
 
     &__main-logo a {
         display: block;
     }
 
     &__menu-btn {
+        width: 2.5rem;
+        height: 2.5rem;
         padding: 0;
+        background: url('/assets/Icons/hamburger-icon.svg') center/contain
+            no-repeat;
 
         // To switch the images on clicking
-        &[aria-expanded='true'] img {
-            content: url('/assets/Icons/cross-icon.svg');
+        &[aria-expanded='true'] {
+            background-image: url('/assets/Icons/cross-icon.svg');
         }
 
-        &[aria-expanded='false'] img {
-            content: url('/assets/Icons/hamburger-icon.svg');
+        img {
+            display: none;
         }
     }
 
@@ -39,10 +44,15 @@
         top: 5rem;
         left: 0;
         right: 0;
-        background: rgba(abstracts.$color-secondary, 0.8);
-        backdrop-filter: blur(10px);
         border-radius: 1rem;
         margin: 2rem;
+
+        background: rgba(abstracts.$color-secondary, 0.8);
+        @supports (backdrop-filter: blur(10px)) or
+            (-webkit-backdrop-filter: blur(10px)) {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
 
         &__list {
             list-style: none;
@@ -57,6 +67,18 @@
             text-decoration: none;
             padding: 1rem;
             display: block;
+        }
+
+        &__list a:hover,
+        &__list a:focus {
+            color: abstracts.$color-dark;
+            outline: none;
+        }
+
+        &__list a:focus-visible {
+            color: abstracts.$color-dark;
+            outline: 2px solid abstracts.$color-dark;
+            outline-offset: 2px;
         }
 
         &__btn {
@@ -84,12 +106,6 @@
         &__btn.btn-primary a {
             color: white;
         }
-
-        &__list a:hover,
-        &__list a:focus {
-            color: abstracts.$color-dark;
-            outline: none;
-        }
     }
 }
 
@@ -99,7 +115,11 @@
         flex-direction: row-reverse;
         padding: 2rem 4.5rem;
 
-        &__nav__btn {
+        &__main-logo {
+            margin-left: 10rem;
+        }
+
+        &__nav &__btn {
             margin: 0;
         }
     }
@@ -124,7 +144,11 @@
 @include abstracts.breakpoint-up('large') {
     .header {
         flex-direction: row;
-        padding-right: 0;
+        padding: 2.5rem 0 2.5rem 1.5rem;
+
+        &__main-logo {
+            margin: 0;
+        }
 
         &__menu-btn {
             display: none;
@@ -160,7 +184,7 @@
                     margin-left: 12rem;
                 }
 
-                &.btn-secondary {
+                &.btn-primary {
                     color: white;
                 }
             }

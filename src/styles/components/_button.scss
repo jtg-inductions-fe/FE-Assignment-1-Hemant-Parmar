@@ -11,6 +11,9 @@
     border-radius: 1.5rem;
     cursor: pointer;
     line-height: normal;
+    border: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
 
     &:focus-visible {
         outline: 2px solid v.$color-raisin-black;
