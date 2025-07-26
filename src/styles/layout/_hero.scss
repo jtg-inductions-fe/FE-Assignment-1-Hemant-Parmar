@@ -1,11 +1,11 @@
 @use '../abstracts';
 
 // -----------------------------------------------------------------------------
-// This file contains all styles related to the hero of the site/application.
+// This file contains all styles related to the hero section of the site/application.
 // -----------------------------------------------------------------------------
 
 .hero {
-    padding: 1.8rem 1rem;
+    padding: 1.8rem 1rem 2rem;
     display: grid;
     justify-content: center;
     justify-items: center;
