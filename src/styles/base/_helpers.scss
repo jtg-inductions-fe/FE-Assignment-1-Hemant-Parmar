@@ -1,4 +1,4 @@
-@use '../abstracts';
+@use '../abstracts/functions' as f;
 
 // -----------------------------------------------------------------------------
 // This file contains CSS helper classes.
@@ -6,6 +6,6 @@
 
 // Main content containers
 .container {
-    max-width: abstracts.rem(1192); // Container's maximum width
+    max-width: f.rem(1192); // Container's maximum width
     margin: 0 auto;
 }

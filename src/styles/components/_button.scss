@@ -1,4 +1,4 @@
-@use '../abstracts';
+@use '../abstracts/variables' as v;
 
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
@@ -12,7 +12,7 @@
     cursor: pointer;
 
     &:focus-visible {
-        outline: 2px solid abstracts.$color-black;
+        outline: 2px solid v.$color-raisin-black;
         outline-offset: 2px;
     }
 }
@@ -21,12 +21,12 @@
     @extend .btn;
 
     color: white;
-    background-color: abstracts.$color-primary;
+    background-color: v.$color-iris;
     border: none;
 }
 
 .btn-secondary {
     @extend .btn;
 
-    color: abstracts.$color-dark;
+    color: v.$color-gunmetal;
 }

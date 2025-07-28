@@ -1,4 +1,4 @@
-@use '../abstracts';
+@use '../abstracts/variables' as v;
 
 *,
 *::before,
@@ -9,12 +9,7 @@
 body {
     margin: 0;
     background: white;
-    font:
-        normal 125%/1.4 'Inter',
-        Arial,
-        Helvetica,
-        sans-serif;
-    color: abstracts.$color-primary;
+    color: v.$color-iris;
 }
 
 img {
