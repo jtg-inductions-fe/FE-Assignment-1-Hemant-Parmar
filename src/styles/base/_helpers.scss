@@ -1,9 +1,11 @@
+@use '../abstracts';
+
 // -----------------------------------------------------------------------------
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
 
 // Main content containers
 .container {
-    max-width: 1192px; // Container's maximum width
+    max-width: abstracts.rem(1192); // Container's maximum width
     margin: 0 auto;
 }
