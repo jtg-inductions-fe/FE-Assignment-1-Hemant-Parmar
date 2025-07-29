@@ -17,6 +17,7 @@
     }
 
     @include m.breakpoint-up('large') {
+        position: relative;
         grid-template-columns: f.rem(420) f.rem(772);
         padding: 0;
         margin-top: f.rem(60);
@@ -193,7 +194,6 @@
             left: f.rem(38);
             pointer-events: none;
         }
-
         @include m.breakpoint-up('large') {
             top: f.rem(659);
             left: f.rem(-85);
