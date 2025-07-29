@@ -10,7 +10,8 @@
     display: flex;
     justify-content: space-between;
     padding: f.rem(40) f.rem(20) f.rem(40) f.rem(16);
-    color: white;
+    background-color: rgba(white, 0.8);
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     left: 0;
@@ -25,6 +26,11 @@
     @include m.breakpoint-up('large') {
         flex-direction: row;
         padding: f.rem(65) f.rem(98) f.rem(34) f.rem(148);
+    }
+
+    &__main-logo {
+        width: f.rem(40);
+        height: f.rem(47);
     }
 
     &__menu-btn {
@@ -118,6 +124,16 @@
             padding: f.rem(16);
             background-color: aqua;
         }
+
+        @include m.breakpoint-up('large') {
+            position: static;
+            display: flex;
+            flex-direction: row;
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            gap: f.rem(60);
+        }
     }
 
     &__link {
@@ -168,6 +184,11 @@
             right: f.rem(64);
             padding: 0;
             gap: 0;
+        }
+
+        @include m.breakpoint-up('large') {
+            position: static;
+            display: flex;
         }
     }
 
