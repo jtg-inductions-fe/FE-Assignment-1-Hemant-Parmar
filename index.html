@@ -13,48 +13,52 @@
     </head>
     <body>
         <!-- header section  -->
-        <header class="container header">
-            <ul id="tablet-btn-container" hidden></ul>
+        <header class="header">
+            <div class="header__btn-placeholder"></div>
 
-            <div class="header__main-logo">
-                <a href="#">
-                    <img src="assets/Icons/travlog-logo.svg" alt="Main logo" />
-                </a>
-            </div>
-
-            <button
-                id="menu-btn"
-                class="header__menu-btn"
-                aria-controls="nav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <img src="assets/Icons/hamburger-icon.svg" alt="Menu" />
-            </button>
+            <a href="#" class="header__main-logo">
+                <img src="assets/Icons/travlog-logo.svg" alt="Main logo" />
+            </a>
 
             <!-- nav section  -->
-            <nav id="nav" class="header__nav" hidden>
-                <ul class="header__nav__list">
-                    <li>
-                        <a href="#home">Home</a>
-                    </li>
-                    <li>
-                        <a href="#discover">Discover</a>
-                    </li>
-                    <li>
-                        <a href="#special-deals">Special deals</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
+            <nav id="nav" class="header__nav">
+                <button
+                    id="menu-btn"
+                    class="header__menu-btn"
+                    aria-controls="nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                ></button>
 
-                    <li class="header__nav__btn btn-secondary">
-                        <a href="#">Log In</a>
+                <ul id="nav-list" class="header__list" hidden>
+                    <li class="header__list-item">
+                        <a class="header__link" href="#home">Home</a>
                     </li>
-                    <li class="header__nav__btn btn-primary">
-                        <a href="#">Sign Up</a>
+                    <li class="header__list-item">
+                        <a class="header__link" href="#discover">Discover</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a class="header__link" href="#special-deals"
+                            >Special deals</a
+                        >
+                    </li>
+                    <li class="header__list-item">
+                        <a class="header__link" href="#contact">Contact</a>
                     </li>
                 </ul>
+
+                <div id="nav-buttons" class="header__btn-container" hidden>
+                    <button
+                        class="header__btn header__btn--secondary btn-secondary"
+                    >
+                        Log In
+                    </button>
+                    <button
+                        class="header__btn header__btn--primary btn-primary"
+                    >
+                        Sign Up
+                    </button>
+                </div>
             </nav>
         </header>
 
