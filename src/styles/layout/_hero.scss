@@ -1,15 +1,57 @@
-@use '../abstracts';
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
 
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the hero of the site/application.
 // -----------------------------------------------------------------------------
 
 .hero {
-    padding: 1.8rem 1rem;
+    padding: f.rem(20) f.rem(16);
     display: grid;
     justify-content: center;
     justify-items: center;
-    gap: 2rem;
+    gap: f.rem(32);
+
+    @include m.breakpoint-up('medium') {
+        padding-top: f.rem(64);
+        gap: 0;
+    }
+
+    @include m.breakpoint-up('large') {
+        grid-template-columns: f.rem(420) f.rem(772);
+        padding: 0;
+    }
+
+    &__gradient {
+        position: absolute;
+        width: f.rem(272);
+        height: f.rem(348);
+        top: f.rem(-36);
+        left: f.rem(-33);
+        background: v.$color-giants-orange;
+        filter: blur(335px);
+        z-index: -1;
+
+        @include m.breakpoint-up('medium') {
+            width: f.rem(500);
+            height: f.rem(500);
+            top: f.rem(-174);
+            left: f.rem(-163);
+        }
+
+        @include m.breakpoint-up('large') {
+            top: f.rem(43);
+            left: f.rem(-71);
+        }
+    }
+
+    &__img {
+        @include m.breakpoint-up('large') {
+            grid-area: 1 / 2 / 2 / 3;
+            margin-top: f.rem(28);
+        }
+    }
 
     &__content {
         display: flex;
@@ -17,175 +59,137 @@
         justify-content: space-between;
         align-items: center;
         text-align: center;
+
+        @include m.breakpoint-up('medium') {
+            margin-top: f.rem(64);
+        }
+
+        @include m.breakpoint-up('large') {
+            margin-top: f.rem(96);
+            grid-area: 1 / 1 / 2 / 2;
+            text-align: left;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: f.rem(44);
+        }
     }
 
     &__explore {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: f.rem(16);
 
-        color: abstracts.$color-secondary;
-        font-size: abstracts.rem(14);
+        color: v.$color-cyclamen;
+        font-size: f.rem(14);
         font-weight: bold;
         line-height: 120%;
 
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
-        padding: abstracts.rem(18) 2rem;
-        border-radius: 1.75rem;
+        padding: f.rem(18) f.rem(32);
+        border-radius: f.rem(28);
     }
 
     &__tagline {
-        font-size: abstracts.rem(40);
+        font-size: f.rem(40);
         font-weight: bold;
         color: black;
         line-height: 120%;
-        margin-top: 1rem;
+        margin-top: f.rem(16);
 
-        em {
-            font-style: normal;
-            color: abstracts.$color-secondary;
+        @include m.breakpoint-up('medium') {
+            margin-top: f.rem(43);
+            font-size: f.rem(56);
+            padding-inline: f.rem(192);
+        }
+
+        @include m.breakpoint-up('large') {
+            font-size: f.rem(69);
+            margin: 0;
+            padding-inline: 0;
         }
     }
 
+    &__em {
+        font-style: normal;
+        color: v.$color-cyclamen;
+    }
+
     &__text {
-        color: rgba(abstracts.$color-black, 0.5);
-        font-size: 1rem;
+        color: rgba(v.$color-raisin-black, 0.5);
+        font-size: f.rem(16);
         line-height: 160%;
-        margin-top: 1.5rem;
+        margin-top: f.rem(24);
+
+        @include m.breakpoint-up('medium') {
+            margin-top: f.rem(43);
+            font-size: f.rem(18);
+            padding-inline: f.rem(280);
+        }
+
+        @include m.breakpoint-up('large') {
+            margin: 0;
+            padding-inline: 0;
+        }
     }
 
     &__btn-container {
         display: flex;
         flex-direction: column;
         width: 100%;
+
+        @include m.breakpoint-up('medium') {
+            flex-direction: row;
+            justify-content: center;
+            margin-top: f.rem(34);
+            gap: f.rem(16);
+        }
+
+        @include m.breakpoint-up('large') {
+            margin: 0;
+            justify-content: flex-start;
+        }
     }
 
     &__btn {
         width: 100%;
-        font-size: abstracts.rem(14);
+        font-size: f.rem(14);
         font-weight: bold;
         padding: 0;
 
-        &:hover,
-        &:focus {
-            filter: sepia(2);
-        }
-
-        &.btn-primary {
-            height: 4rem;
-            border-radius: 2rem;
-            margin-top: 2rem;
-            box-shadow:
-                0px 0px 0px 0px #0000001a,
-                0px 5px 11px 0px #0000001a,
-                0px 20px 20px 0px #00000017,
-                0px 45px 27px 0px #0000000d,
-                0px 81px 32px 0px #00000003,
-                0px 126px 35px 0px #00000000;
-        }
-
-        &.btn-secondary {
-            height: 4.5rem;
-            border-radius: 2.25rem;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-            border: solid 1px abstracts.$color-light;
-            position: relative;
-            z-index: 1;
+        @include m.breakpoint-up('large') {
+            margin: 0;
         }
     }
-}
+    &__btn--primary {
+        height: f.rem(64);
+        border-radius: f.rem(32);
+        margin-top: f.rem(32);
 
-@include abstracts.breakpoint-up('medium') {
-    .hero {
-        padding-top: 4rem;
-        gap: 0;
-
-        &__content {
-            margin-top: 4rem;
-        }
-
-        // &__explore {}
-
-        &__tagline {
-            margin-top: abstracts.rem(43);
-            font-size: abstracts.rem(56);
-            padding-inline: 12rem;
-        }
-
-        &__text {
-            margin-top: abstracts.rem(43);
-            font-size: abstracts.rem(18);
-            padding-inline: 17.5rem;
-        }
-
-        &__btn-container {
-            flex-direction: row;
-            justify-content: center;
-            margin-top: 2.75rem;
-            gap: 1rem;
-        }
-
-        &__btn {
-            &.btn-primary {
-                margin-top: 0;
-                width: 9rem;
-                height: 3rem;
-                border-radius: 1.5rem;
-            }
-
-            &.btn-secondary {
-                margin-top: 0;
-                width: 11rem;
-                height: 3.5rem;
-                border-radius: 1.75rem;
-            }
+        @include m.breakpoint-up('medium') {
+            margin-top: 0;
+            width: f.rem(144);
+            height: f.rem(48);
+            border-radius: f.rem(24);
         }
     }
-}
 
-@include abstracts.breakpoint-up('large') {
-    .hero {
-        grid-template-columns: abstracts.rem(420) abstracts.rem(772);
-        padding: 0;
+    &__btn--secondary {
+        height: f.rem(72);
+        border-radius: f.rem(36);
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: f.rem(8);
+        margin-top: f.rem(24);
+        border: solid 1px #eeeeee;
 
-        &__img {
-            grid-area: 1 / 2 / 2 / 3;
-            margin-top: 1.75rem;
-        }
-
-        &__content {
-            margin-top: 6rem;
-            grid-area: 1 / 1 / 2 / 2;
-            text-align: left;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-            gap: 2.75rem;
-        }
-
-        &__tagline {
-            font-size: abstracts.rem(69);
-            margin: 0;
-            padding-inline: 0;
-        }
-
-        &__text {
-            margin: 0;
-            padding-inline: 0;
-        }
-
-        &__btn-container {
-            margin: 0;
-            justify-content: flex-start;
-        }
-
-        &__btn {
-            margin: 0;
+        @include m.breakpoint-up('medium') {
+            margin-top: 0;
+            width: f.rem(176);
+            height: f.rem(56);
+            border-radius: f.rem(28);
         }
     }
 }
