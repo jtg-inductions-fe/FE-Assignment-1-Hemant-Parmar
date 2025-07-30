@@ -4,10 +4,14 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font: inherit;
 }
 
 body {
-    margin: 0;
     background: white;
     color: v.$color-iris;
 }
@@ -15,13 +19,10 @@ body {
 img {
     display: block;
     max-width: 100%;
-    height: auto;
 }
 
 button {
-    border: none;
     background: none;
     cursor: pointer;
-    font: inherit;
     appearance: none;
 }
