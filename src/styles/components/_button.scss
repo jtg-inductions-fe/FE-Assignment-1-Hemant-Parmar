@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
 
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
@@ -6,9 +7,8 @@
 
 // Generic button class
 .btn {
-    height: 3rem;
-    width: auto;
-    border-radius: 1.5rem;
+    height: f.rem(48);
+    border-radius: f.rem(24);
     cursor: pointer;
     line-height: normal;
     border: none;
