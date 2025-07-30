@@ -7,7 +7,6 @@
     margin: 0;
     padding: 0;
     border: none;
-    font-size: 100%;
     font: inherit;
 }
 
@@ -17,8 +16,8 @@ body {
 }
 
 img {
-    display: block;
     max-width: 100%;
+    display: block;
 }
 
 button {
