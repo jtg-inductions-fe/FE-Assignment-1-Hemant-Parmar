@@ -7,7 +7,7 @@
     src:
         local('Inter'),
         local('Inter Variable'),
-        url('/assets/fonts/InterVariable.woff2') format('woff2-variations'),
+        url('/assets/fonts/InterVariable.woff2') format('woff2'),
         url('/assets/fonts/InterVariable.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
@@ -19,8 +19,7 @@
     src:
         local('Inter Italic'),
         local('Inter Variable Italic'),
-        url('/assets/fonts/InterVariable-Italic.woff2')
-            format('woff2-variations'),
+        url('/assets/fonts/InterVariable-Italic.woff2') format('woff2'),
         url('/assets/fonts/InterVariable-Italic.ttf') format('truetype');
     font-weight: 100 900;
     font-style: italic;
@@ -29,7 +28,7 @@
 
 body {
     font:
-        normal 125%/1.4 'Inter',
+        normal 1rem 'Inter',
         Arial,
         Helvetica,
         sans-serif;
