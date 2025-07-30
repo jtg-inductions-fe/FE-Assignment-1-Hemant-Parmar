@@ -12,11 +12,31 @@
     align-items: center;
     text-align: center;
 
+    @include m.breakpoint-up('large') {
+        text-align: left;
+    }
+
+    &__header {
+        @include m.breakpoint-up('large') {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
     &__heading {
         font-size: f.rem(16);
         line-height: 120%;
         font-weight: bold;
+        letter-spacing: 0.2rem;
         color: v.$color-cyclamen;
+
+        @include m.breakpoint-up('medium') {
+            font-size: f.rem(23);
+        }
+
+        @include m.breakpoint-up('large') {
+            text-align: left;
+        }
     }
 
     &__subheading {
@@ -24,15 +44,35 @@
         font-size: f.rem(32);
         font-weight: bold;
         color: v.$color-raisin-black;
+
+        @include m.breakpoint-up('medium') {
+            font-size: f.rem(40);
+            letter-spacing: f.rem(-1);
+        }
+
+        @include m.breakpoint-up('large') {
+            font-size: f.rem(44);
+            max-width: f.rem(407);
+        }
     }
 
     &__card-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        // flex-direction: column;
         padding: f.rem(32) f.rem(16);
         gap: f.rem(16);
+
+        @include m.breakpoint-up('medium') {
+            flex-wrap: nowrap;
+            padding: f.rem(64) f.rem(64);
+        }
+
+        @include m.breakpoint-up('large') {
+            grid-area: 1 / 2 / 2 / 3;
+            padding: 0;
+            text-align: center;
+        }
     }
 
     &__card {
@@ -46,6 +86,19 @@
 
         &:hover {
             box-shadow: 0 5px 100px rgba(black, 0.2);
+            border: none;
+        }
+
+        @include m.breakpoint-up('medium') {
+            flex: 1;
+            padding: f.rem(64) f.rem(64) f.rem(35);
+        }
+
+        @include m.breakpoint-up('large') {
+            padding: f.rem(64) f.rem(63) f.rem(98);
+            &:last-child {
+                display: none;
+            }
         }
     }
 
@@ -58,6 +111,11 @@
         font-weight: bold;
         line-height: 120%;
         color: v.$color-raisin-black;
+
+        @include m.breakpoint-up('medium') {
+            font-size: f.rem(28);
+            padding-top: f.rem(32);
+        }
     }
 
     &__card-description {
