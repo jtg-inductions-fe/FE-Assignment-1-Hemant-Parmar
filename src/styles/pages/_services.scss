@@ -51,7 +51,8 @@
         }
 
         @include m.breakpoint-up('large') {
-            max-width: 15ch;
+            font-size: f.rem(44);
+            max-width: f.rem(407);
         }
     }
 
