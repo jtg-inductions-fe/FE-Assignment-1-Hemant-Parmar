@@ -1,0 +1,11 @@
+@use '../abstracts/functions' as f;
+
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+// Main content containers
+.container {
+    max-width: f.rem(1192); // Container's maximum width
+    margin: 0 auto;
+}

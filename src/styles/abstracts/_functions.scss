@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+@function rem($pixel) {
+    $value: if(math.is-unitless($pixel), $pixel, math.div($pixel, 1px));
+    @return math.div($value, 16) * 1rem;
+}

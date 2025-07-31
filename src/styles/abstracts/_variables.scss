@@ -1,0 +1,22 @@
+@use 'functions' as f;
+
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Colors in the design file
+$color-iris: #5d50c6;
+$color-cyclamen: #f85e9f;
+$color-giants-orange: #ff5722;
+$color-sunglow: #facd49;
+$color-raisin-black: #191825;
+$color-gunmetal: #222831;
+$color-anti-flash-white: #eeeeee;
+$color-white: #ffffff;
+$color-black: #000000;
+
+/// Breakpoint sizes in the design file
+$breakpoint-size: (
+    'medium': f.rem(1024),
+    'large': f.rem(1440),
+);

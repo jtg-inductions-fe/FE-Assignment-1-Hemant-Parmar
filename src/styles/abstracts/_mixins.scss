@@ -1,0 +1,14 @@
+@use 'variables' as v;
+@use 'sass:map';
+
+// Mixin to simplify using media queries with mobile first approach
+// Usage: @include breakpoint-up('large') { ... }
+@mixin breakpoint-up($size) {
+    @if not map.has-key(v.$breakpoint-size, $size) {
+        @error "breakpoint-up(): unknown size `#{$size}`. "
+            + "Valid keys: #{map.keys(v.$breakpoint-size)}";
+    }
+    @media (min-width: map.get(v.$breakpoint-size, $size)) {
+        @content;
+    }
+}

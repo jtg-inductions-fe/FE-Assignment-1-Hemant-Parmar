@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as v;
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+// Generic button class
+.btn {
+    height: 2em;
+    width: auto;
+    border-radius: 1em;
+    cursor: pointer;
+
+    &:focus-visible {
+        outline: 2px solid v.$color-raisin-black;
+        outline-offset: 2px;
+    }
+}
+
+.btn-primary {
+    @extend .btn;
+
+    color: white;
+    background-color: v.$color-iris;
+    border: none;
+}
+
+.btn-secondary {
+    @extend .btn;
+
+    color: v.$color-gunmetal;
+}

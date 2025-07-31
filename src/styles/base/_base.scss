@@ -1,0 +1,36 @@
+@use '../abstracts/variables' as v;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font: inherit;
+}
+
+body {
+    background: white;
+    color: v.$color-iris;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    background: none;
+    cursor: pointer;
+    appearance: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}

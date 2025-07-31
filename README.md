@@ -45,7 +45,7 @@ To set up the project on your local environment, follow these steps:
 
     The app will typically be available at http://localhost:3000, but check the terminal output for the exact URL.
 
-    > **_NOTE:_** Note: If you want to change the server's port number, you can do so by modifying the **vite.config.js** file at the root level of the project:
+    > **_NOTE:_** If you want to change the server's port number, you can do so by modifying the **vite.config.js** file at the root level of the project:
 
     ```js
     server{
@@ -62,6 +62,28 @@ To set up the project on your local environment, follow these steps:
     This command will generate the optimized files in the dist directory.
 
 6. **Lint the Code**
+
     ```bash
     npm run lint
+    ```
+
+7. **Login to Netlify**
+
+    ```bash
+    netlify login
+    ```
+
+    You will be redirected to a browser for logging in with your credentials.
+
+8. **Initialize Netlify**
+
+    ```bash
+    netlify init
+    ```
+
+    This command will connect or create a Netlify site in the current directory.
+
+9. **Deploy on Netlify**
+    ```bash
+    netlify deploy
     ```

@@ -1,1 +1,16 @@
-// TODO: Add styles as per the requirement
+@charset "UTF-8";
+
+// 1. Vendors
+@use 'vendors';
+
+// 2. Base stuff (normalize is inside base folder itself)
+@use 'base';
+
+// 3. Components
+@use 'components';
+
+// 4. Layout-related sections
+@use 'layout';
+
+// 5. Pages
+@use 'pages';
