@@ -13,17 +13,24 @@
 }
 
 .heading {
+    text-align: center;
     color: v.$color-cyclamen;
     font-size: f.rem(16);
     font-weight: bold;
     line-height: 120%;
+    letter-spacing: f.rem(3.2);
 
     @include m.breakpoint-up('medium') {
         font-size: f.rem(23);
     }
+
+    @include m.breakpoint-up('large') {
+        text-align: left;
+    }
 }
 
 .subheading {
+    text-align: center;
     color: v.$color-raisin-black;
     font-size: f.rem(32);
     font-weight: bold;
@@ -35,6 +42,7 @@
 
     @include m.breakpoint-up('large') {
         font-size: f.rem(44);
+        text-align: left;
     }
 }
 
