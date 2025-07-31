@@ -114,7 +114,7 @@
 
         @include m.breakpoint-up('medium') {
             font-size: f.rem(28);
-            padding-top: f.rem(32);
+            padding-top: f.rem(34);
         }
     }
 
@@ -122,5 +122,29 @@
         font-size: f.rem(18);
         line-height: 160%;
         color: rgba(v.$color-raisin-black, 0.5);
+    }
+
+    &__gradient {
+        display: none;
+
+        @include m.breakpoint-up('medium') {
+            display: block;
+            position: absolute;
+            top: f.rem(1478);
+            left: f.rem(946);
+            right: 0;
+            height: f.rem(406);
+
+            background: v.$color-sunglow;
+            filter: blur(125px);
+            z-index: -1;
+        }
+
+        @include m.breakpoint-up('large') {
+            top: f.rem(872);
+            left: f.rem(1362);
+            right: 0;
+            height: f.rem(495);
+        }
     }
 }
