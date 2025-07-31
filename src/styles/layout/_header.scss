@@ -1,6 +1,7 @@
 @use '../abstracts/variables' as v;
 @use '../abstracts/mixins' as m;
 @use '../abstracts/functions' as f;
+@use 'sass:color';
 
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
@@ -10,8 +11,7 @@
     display: flex;
     justify-content: space-between;
     padding: f.rem(40) f.rem(20) f.rem(40) f.rem(16);
-    background-color: rgba(white, 0.8);
-    backdrop-filter: blur(10px);
+    background-color: v.$color-white;
     position: sticky;
     top: 0;
     left: 0;
@@ -21,20 +21,25 @@
         flex-direction: row-reverse;
         padding: f.rem(32) f.rem(68);
         align-items: center;
+
+        &::before {
+            content: '';
+            width: f.rem(40);
+        }
     }
 
     @include m.breakpoint-up('large') {
         flex-direction: row;
         padding: f.rem(65) f.rem(98) f.rem(34) f.rem(148);
+
+        &::before {
+            display: none;
+        }
     }
 
     &__main-logo {
         width: f.rem(40);
         height: f.rem(47);
-
-        @include m.breakpoint-up('medium') {
-            margin-right: f.rem(424);
-        }
 
         @include m.breakpoint-up('large') {
             margin-right: 0;
@@ -50,17 +55,17 @@
         @include m.breakpoint-up('large') {
             display: none;
         }
-    }
 
-    // To switch the images on clicking
-    &__menu-btn[aria-expanded='true'] {
-        background-image: url('/assets/Icons/cross-icon.svg');
-        position: absolute;
-        top: f.rem(40);
-        right: f.rem(20);
+        // To switch the images on clicking
+        &[aria-expanded='true'] {
+            background-image: url('/assets/Icons/cross-icon.svg');
+            position: absolute;
+            top: f.rem(40);
+            right: f.rem(20);
 
-        @include m.breakpoint-up('medium') {
-            position: static;
+            @include m.breakpoint-up('medium') {
+                position: static;
+            }
         }
     }
 
@@ -72,20 +77,28 @@
             position: static;
             gap: f.rem(252);
         }
+
+        &--visible {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding-top: f.rem(80);
+
+            @include m.breakpoint-up('medium') {
+                position: static;
+                padding-top: 0;
+                background: transparent;
+            }
+        }
     }
 
-    &__nav--visible {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding-top: f.rem(80);
-        background-color: aqua;
-
-        @include m.breakpoint-up('medium') {
-            position: static;
-            padding-top: 0;
-            background: transparent;
+    @keyframes nav-appear {
+        from {
+            background-color: v.$color-white;
+        }
+        to {
+            background-color: lighten(v.$color-cyclamen, 20%);
         }
     }
 
@@ -98,29 +111,36 @@
             background: transparent;
             gap: f.rem(60);
         }
-    }
 
-    &__list--visible {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        @include m.breakpoint-up('medium') {
-            position: absolute;
-            top: f.rem(96);
-            left: 0;
-            right: 0;
-            padding: f.rem(16);
-            background-color: aqua;
-        }
-
-        @include m.breakpoint-up('large') {
-            position: static;
+        &--visible {
             display: flex;
-            flex-direction: row;
-            background: transparent;
-            padding: 0;
-            gap: f.rem(60);
+            flex-direction: column;
+            align-items: center;
+            animation: 1s ease-out 0s 1 normal both running nav-appear;
+            margin: f.rem(32) f.rem(32) 0;
+            padding-top: f.rem(32);
+            border-radius: f.rem(32) f.rem(32) 0 0;
+
+            @include m.breakpoint-up('medium') {
+                position: absolute;
+                top: f.rem(96);
+                left: 0;
+                right: 0;
+                padding: f.rem(48);
+                margin: f.rem(32) f.rem(160);
+                border-radius: f.rem(32);
+            }
+
+            @include m.breakpoint-up('large') {
+                position: static;
+                display: flex;
+                flex-direction: row;
+                background: transparent;
+                animation: none;
+                padding: 0;
+                margin: 0;
+                gap: f.rem(60);
+            }
         }
     }
 
@@ -128,18 +148,18 @@
         color: rgba(v.$color-raisin-black, 0.5);
         font-size: f.rem(14);
         font-weight: bold;
-    }
 
-    &__link:hover,
-    &__link:focus {
-        color: v.$color-gunmetal;
-        outline: none;
-    }
+        &:hover,
+        &:focus {
+            color: v.$color-gunmetal;
+            outline: none;
+        }
 
-    &__link:focus-visible {
-        color: v.$color-gunmetal;
-        outline: 2px solid v.$color-gunmetal;
-        outline-offset: 2px;
+        &:focus-visible {
+            color: v.$color-gunmetal;
+            outline: 2px solid v.$color-gunmetal;
+            outline-offset: 2px;
+        }
     }
 
     &__btn-container {
@@ -156,59 +176,65 @@
             position: static;
             display: flex;
         }
-    }
 
-    &__btn-container--visible {
-        display: flex;
-        justify-content: center;
-        align-items: baseline;
-        padding: f.rem(16);
-
-        @include m.breakpoint-up('medium') {
-            display: block;
-            position: fixed;
-            top: f.rem(32);
-            right: f.rem(64);
-            padding: 0;
-        }
-
-        @include m.breakpoint-up('large') {
-            position: static;
+        &--visible {
             display: flex;
+            justify-content: center;
+            align-items: baseline;
+            padding: f.rem(16);
+            animation: 1s ease-out 0s 1 normal both running nav-appear;
+            border-radius: 0 0 f.rem(32) f.rem(32);
+            margin: 0 f.rem(32) f.rem(32);
+
+            @include m.breakpoint-up('medium') {
+                display: block;
+                position: fixed;
+                top: f.rem(32);
+                right: f.rem(64);
+                padding: 0;
+                margin: 0;
+                animation: none;
+            }
+
+            @include m.breakpoint-up('large') {
+                position: static;
+                display: flex;
+            }
         }
     }
 
     &__btn {
         font-weight: bold;
         font-size: f.rem(14);
-    }
 
-    &__btn:hover {
-        box-shadow: 0 5px 10px rgba(black, 0.5);
-    }
-
-    &__btn--secondary {
-        color: v.$color-gunmetal;
-        padding-inline: f.rem(24);
-
-        @include m.breakpoint-up('large') {
-            padding-inline: f.rem(32);
+        &:hover {
+            box-shadow: 0 5px 10px rgba(v.$color-black, 0.5);
         }
-    }
 
-    &__btn--secondary:hover,
-    &__btn--secondary:focus {
-        background-color: rgba(v.$color-iris, 0.5);
-        color: white;
-    }
+        &--secondary {
+            color: v.$color-gunmetal;
+            padding-inline: f.rem(24);
 
-    &__btn--primary {
-        color: white;
-        padding-inline: f.rem(32);
-    }
+            @include m.breakpoint-up('large') {
+                padding-inline: f.rem(32);
+            }
 
-    &__btn--primary:hover,
-    &__btn--primary:focus {
-        background-color: rgba(v.$color-iris, 0.8);
+            &:hover,
+            &:focus {
+                background-color: rgba(v.$color-iris, 0.5);
+                color: v.$color-white;
+            }
+        }
+
+        &--primary {
+            color: v.$color-white;
+            padding-inline: f.rem(32);
+
+            &:hover,
+            &:focus {
+                background-color: v.$color-white;
+                color: v.$color-iris;
+            }
+        }
     }
 }
