@@ -65,4 +65,28 @@
         line-height: 160%;
         color: rgba(v.$color-raisin-black, 0.5);
     }
+
+    &__gradient {
+        display: none;
+
+        @include m.breakpoint-up('medium') {
+            display: block;
+            position: absolute;
+            top: f.rem(1478);
+            left: f.rem(946);
+            right: 0;
+            height: f.rem(406);
+
+            background: rgba(v.$color-sunglow, 0.5);
+            filter: blur(125px);
+            z-index: -1;
+        }
+
+        @include m.breakpoint-up('large') {
+            top: f.rem(-335);
+            left: f.rem(1232);
+            width: f.rem(78);
+            height: f.rem(495);
+        }
+    }
 }
