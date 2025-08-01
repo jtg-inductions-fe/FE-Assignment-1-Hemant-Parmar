@@ -19,6 +19,10 @@
         outline: 2px solid v.$color-iris;
         outline-offset: -2px;
     }
+
+    &:hover {
+        box-shadow: 0 5px 10px rgba(black, 0.5);
+    }
 }
 
 .btn-primary {
@@ -27,10 +31,21 @@
     color: white;
     background-color: v.$color-iris;
     border: none;
+
+    &:hover,
+    &:focus {
+        background-color: rgba(v.$color-iris, 0.8);
+    }
 }
 
 .btn-secondary {
     @extend .btn;
 
     color: v.$color-gunmetal;
+
+    &:hover,
+    &:focus {
+        background-color: rgba(v.$color-iris, 0.5);
+        color: white;
+    }
 }
