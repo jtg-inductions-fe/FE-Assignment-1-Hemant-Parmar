@@ -13,6 +13,7 @@
     text-align: center;
 
     @include m.breakpoint-up('large') {
+        position: relative;
         text-align: left;
     }
 
@@ -135,15 +136,15 @@
             right: 0;
             height: f.rem(406);
 
-            background: v.$color-sunglow;
+            background: rgba(v.$color-sunglow, 0.5);
             filter: blur(125px);
             z-index: -1;
         }
 
         @include m.breakpoint-up('large') {
-            top: f.rem(872);
-            left: f.rem(1362);
-            right: 0;
+            top: f.rem(-335);
+            left: f.rem(1232);
+            width: f.rem(78);
             height: f.rem(495);
         }
     }
