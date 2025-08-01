@@ -1,26 +1,64 @@
 @use '../abstracts/functions' as f;
 @use '../abstracts/mixins' as m;
 @use '../abstracts/variables' as v;
+@use 'sass:math';
 
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the travel point section of the site/application.
 // -----------------------------------------------------------------------------
 
 .travel-point {
-    margin-top: f.rem(18);
+    max-width: f.rem(1440);
+    margin: f.rem(18) auto;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     gap: f.rem(21.5);
 
+    @include m.breakpoint-up('medium') {
+        gap: f.rem(32);
+    }
+
+    @include m.breakpoint-up('large') {
+        margin-top: f.rem(61);
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
     &__img {
         padding: f.rem(16);
+
+        @include m.breakpoint-up('medium') {
+            padding: f.rem(46) f.rem(57) f.rem(32) f.rem(96);
+        }
+
+        @include m.breakpoint-up('large') {
+            padding: f.rem(53) 0;
+            width: f.rem(871);
+            height: f.rem(697);
+        }
     }
 
     &__content {
         display: flex;
         flex-direction: column;
         gap: f.rem(16);
+
+        @include m.breakpoint-up('medium') {
+            padding-inline: f.rem(96);
+            gap: f.rem(32);
+        }
+
+        @include m.breakpoint-up('large') {
+            padding: f.rem(85.6) 0;
+            max-width: f.rem(451); //test
+        }
+    }
+
+    &__header {
+        @include m.breakpoint-up('large') {
+            text-align: left;
+        }
     }
 
     &__heading {
@@ -33,10 +71,6 @@
         @include m.breakpoint-up('medium') {
             font-size: f.rem(23);
         }
-
-        @include m.breakpoint-up('large') {
-            text-align: left;
-        }
     }
 
     &__subheading {
@@ -48,12 +82,11 @@
 
         @include m.breakpoint-up('medium') {
             font-size: f.rem(40);
-            letter-spacing: f.rem(-1);
+            letter-spacing: f.rem(-0.7);
         }
 
         @include m.breakpoint-up('large') {
             font-size: f.rem(44);
-            max-width: f.rem(407);
         }
     }
 
@@ -63,12 +96,27 @@
         line-height: 160%;
         color: rgba(v.$color-raisin-black, 0.5);
         padding-inline: f.rem(32);
+
+        @include m.breakpoint-up('medium') {
+            font-size: f.rem(18);
+        }
+
+        @include m.breakpoint-up('large') {
+            padding: 0;
+        }
     }
 
     &__card-container {
         display: grid;
         padding: f.rem(16);
         gap: f.rem(16);
+
+        @include m.breakpoint-up('medium') {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: f.rem(32);
+            padding: f.rem(32) 0;
+        }
     }
 
     &__card {
@@ -95,5 +143,15 @@
 
     &__floating-img {
         display: none;
+
+        @include m.breakpoint-up('large') {
+            display: block;
+            position: absolute;
+            width: f.rem(280);
+            height: f.rem(350);
+            top: f.rem(2011.5);
+            left: f.rem(1184);
+            z-index: 1;
+        }
     }
 }
