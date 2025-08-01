@@ -8,6 +8,7 @@
 // -----------------------------------------------------------------------------
 
 .travel-point {
+    position: relative;
     max-width: f.rem(1440);
     margin: f.rem(18) auto;
     display: flex;
@@ -149,8 +150,8 @@
             position: absolute;
             width: f.rem(280);
             height: f.rem(350);
-            top: f.rem(2011.5);
-            left: f.rem(1184);
+            top: f.rem(306);
+            right: f.rem(-23);
             z-index: 1;
         }
     }
