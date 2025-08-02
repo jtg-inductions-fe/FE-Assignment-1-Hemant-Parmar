@@ -23,6 +23,7 @@
         margin-top: f.rem(61);
         flex-wrap: nowrap;
         gap: 0;
+        padding-right: f.rem(116);
     }
 
     &__img {
@@ -33,6 +34,7 @@
         }
 
         @include m.breakpoint-up('large') {
+            flex-shrink: 0;
             padding: f.rem(53) 0;
             width: f.rem(871);
             height: f.rem(697);
@@ -51,7 +53,6 @@
 
         @include m.breakpoint-up('large') {
             padding: f.rem(85.6) 0;
-            max-width: f.rem(451); //test
         }
     }
 
