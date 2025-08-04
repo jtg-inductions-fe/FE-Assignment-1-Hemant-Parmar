@@ -40,33 +40,6 @@
     &__main-logo {
         width: f.rem(40);
         height: f.rem(47);
-
-        @include m.breakpoint-up('large') {
-            margin-right: 0;
-        }
-    }
-
-    &__menu-btn {
-        width: f.rem(40);
-        height: f.rem(40);
-        background: url('/assets/Icons/hamburger-icon.svg') center/contain
-            no-repeat;
-
-        @include m.breakpoint-up('large') {
-            display: none;
-        }
-
-        // To switch the images on clicking
-        &[aria-expanded='true'] {
-            background-image: url('/assets/Icons/cross-icon.svg');
-            position: absolute;
-            top: f.rem(40);
-            right: f.rem(20);
-
-            @include m.breakpoint-up('medium') {
-                position: static;
-            }
-        }
     }
 
     /* Navigation menu */
@@ -93,12 +66,35 @@
         }
     }
 
+    &__menu-btn {
+        width: f.rem(40);
+        height: f.rem(40);
+        background: url('/assets/Icons/hamburger-icon.svg') center/contain
+            no-repeat;
+
+        @include m.breakpoint-up('large') {
+            display: none;
+        }
+
+        // To switch the images on clicking
+        &[aria-expanded='true'] {
+            background-image: url('/assets/Icons/cross-icon.svg');
+            position: absolute;
+            top: f.rem(40);
+            right: f.rem(20);
+
+            @include m.breakpoint-up('medium') {
+                position: static;
+            }
+        }
+    }
+
     @keyframes nav-appear {
         from {
-            background-color: v.$color-white;
+            opacity: 0;
         }
         to {
-            background-color: lighten(v.$color-cyclamen, 20%);
+            opacity: 1;
         }
     }
 
@@ -117,6 +113,7 @@
             flex-direction: column;
             align-items: center;
             animation: 1s ease-out 0s 1 normal both running nav-appear;
+            background-color: lighten(v.$color-cyclamen, 20%);
             margin: f.rem(32) f.rem(32) 0;
             padding-top: f.rem(32);
             border-radius: f.rem(32) f.rem(32) 0 0;
@@ -167,7 +164,7 @@
 
         @include m.breakpoint-up('medium') {
             display: block;
-            position: fixed;
+            position: absolute;
             top: f.rem(32);
             right: f.rem(64);
         }
@@ -183,17 +180,19 @@
             align-items: baseline;
             padding: f.rem(16);
             animation: 1s ease-out 0s 1 normal both running nav-appear;
+            background-color: lighten(v.$color-cyclamen, 20%);
             border-radius: 0 0 f.rem(32) f.rem(32);
             margin: 0 f.rem(32) f.rem(32);
 
             @include m.breakpoint-up('medium') {
                 display: block;
-                position: fixed;
+                position: absolute;
                 top: f.rem(32);
                 right: f.rem(64);
                 padding: 0;
                 margin: 0;
                 animation: none;
+                background: transparent;
             }
 
             @include m.breakpoint-up('large') {
