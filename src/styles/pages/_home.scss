@@ -10,13 +10,13 @@
     padding: f.rem(20) f.rem(16);
     display: grid;
     justify-items: center;
+    position: relative;
 
     @include m.breakpoint-up('medium') {
         padding-top: f.rem(66);
     }
 
     @include m.breakpoint-up('large') {
-        position: relative;
         grid-template-columns: f.rem(420) f.rem(772);
         padding: 0;
         margin-top: f.rem(60);
@@ -63,7 +63,6 @@
             margin-top: f.rem(68);
             grid-area: 1 / 1 / 2 / 2;
             text-align: left;
-            flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
             gap: f.rem(43);
@@ -96,19 +95,17 @@
     }
 
     &__tagline {
-        max-width: 13ch;
+        color: v.$color-black;
         font-size: f.rem(38);
         font-weight: bold;
-        color: black;
         line-height: f.rem(48);
         margin-top: f.rem(16);
 
         @include m.breakpoint-up('medium') {
             margin-top: f.rem(43);
             font-size: f.rem(56);
-            max-width: 15ch;
-            letter-spacing: -1px;
-            line-height: f.rem(70px);
+            max-width: f.rem(600);
+            line-height: f.rem(70);
         }
 
         @include m.breakpoint-up('large') {
@@ -124,17 +121,14 @@
     }
 
     &__text {
-        margin-top: f.rem(24);
-
         @include m.breakpoint-up('medium') {
-            margin-top: f.rem(43);
             padding-inline: f.rem(280);
         }
 
         @include m.breakpoint-up('large') {
             margin: 0;
             padding-inline: 0;
-            max-width: 24ch;
+            max-width: f.rem(270);
         }
     }
 
@@ -146,7 +140,7 @@
         @include m.breakpoint-up('medium') {
             flex-direction: row;
             justify-content: center;
-            margin-top: f.rem(34);
+            margin-top: f.rem(45);
             gap: f.rem(16);
         }
 
@@ -197,10 +191,11 @@
         @include m.breakpoint-up('medium') {
             display: block;
             position: absolute;
-            top: f.rem(1266);
-            left: f.rem(40);
+            top: f.rem(1155);
+            left: f.rem(38);
             pointer-events: none;
         }
+
         @include m.breakpoint-up('large') {
             top: f.rem(659);
             left: f.rem(-85);
