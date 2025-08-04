@@ -9,12 +9,10 @@
 .hero {
     padding: f.rem(20) f.rem(16);
     display: grid;
-    justify-content: center;
     justify-items: center;
 
     @include m.breakpoint-up('medium') {
         padding-top: f.rem(66);
-        gap: 0;
     }
 
     @include m.breakpoint-up('large') {
