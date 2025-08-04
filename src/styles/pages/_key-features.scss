@@ -5,3 +5,24 @@
 // ------------------------------------------------------------------------------------------
 // This file contains all styles related to the key features section of the site/application.
 // ------------------------------------------------------------------------------------------
+
+.key-features {
+    &__card-img {
+        width: f.rem(100);
+        height: f.rem(100);
+        border-radius: f.rem(32);
+        padding: f.rem(26);
+    }
+}
+
+.location-pin-icon {
+    background-color: v.$color-giants-orange;
+}
+
+.calendar-icon {
+    background-color: v.$color-sunglow;
+}
+
+.ticket-icon {
+    background-color: v.$color-cyclamen;
+}
