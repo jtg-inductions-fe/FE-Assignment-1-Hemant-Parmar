@@ -3,7 +3,7 @@
 @use '../abstracts/variables' as v;
 
 // -----------------------------------------------------------------------------
-// This file contains all styles related to the hero of the site/application.
+// This file contains the styles related to the homepage of the site/application.
 // -----------------------------------------------------------------------------
 
 .hero {
@@ -31,7 +31,7 @@
         background: v.$color-giants-orange;
         filter: blur(335px);
         pointer-events: none;
-        z-index: 1;
+        z-index: 11;
 
         @include m.breakpoint-up('medium') {
             width: f.rem(500);
@@ -124,14 +124,10 @@
     }
 
     &__text {
-        color: rgba(v.$color-raisin-black, 0.5);
-        font-size: f.rem(16);
-        line-height: 160%;
         margin-top: f.rem(24);
 
         @include m.breakpoint-up('medium') {
             margin-top: f.rem(43);
-            font-size: f.rem(18);
             padding-inline: f.rem(280);
         }
 
@@ -162,48 +158,37 @@
 
     &__btn {
         width: 100%;
-        font-size: f.rem(14);
-        font-weight: bold;
-        padding: 0;
 
-        @include m.breakpoint-up('large') {
-            margin: 0;
+        &--primary {
+            height: f.rem(65);
+            border-radius: f.rem(32);
+            margin-top: f.rem(32);
+
+            @include m.breakpoint-up('medium') {
+                margin-top: 0;
+                width: f.rem(144);
+                height: f.rem(48);
+                border-radius: f.rem(24);
+            }
         }
-    }
-    &__btn--primary {
-        height: f.rem(65);
-        border-radius: f.rem(32);
-        margin-top: f.rem(32);
 
-        @include m.breakpoint-up('medium') {
-            margin-top: 0;
-            width: f.rem(144);
-            height: f.rem(48);
-            border-radius: f.rem(24);
+        &--secondary {
+            height: f.rem(72);
+            border-radius: f.rem(36);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: f.rem(8);
+            margin-top: f.rem(24);
+            border: solid 1px v.$color-anti-flash-white;
+
+            @include m.breakpoint-up('medium') {
+                margin-top: 0;
+                width: f.rem(176);
+                height: f.rem(56);
+                border-radius: f.rem(28);
+            }
         }
-    }
-
-    &__btn--secondary {
-        height: f.rem(72);
-        border-radius: f.rem(36);
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: f.rem(8);
-        margin-top: f.rem(24);
-        border: solid 1px #eeeeee;
-
-        @include m.breakpoint-up('medium') {
-            margin-top: 0;
-            width: f.rem(176);
-            height: f.rem(56);
-            border-radius: f.rem(28);
-        }
-    }
-
-    &__btn--secondary:hover {
-        border: none;
     }
 
     &__side-triangles {
