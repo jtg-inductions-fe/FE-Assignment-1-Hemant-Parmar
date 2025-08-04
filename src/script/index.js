@@ -26,19 +26,19 @@ const trapFocus = (e) => {
 };
 
 const openMenu = () => {
+    nav.classList.add('header__nav--open');
+    navList.classList.remove('header__list--hidden');
+    navBtns.classList.remove('header__btn-container--hidden');
     document.addEventListener('keydown', trapFocus);
-    navList.classList.add('header__list--visible');
-    navBtns.classList.add('header__btn-container--visible');
-    nav.classList.add('header__nav--visible');
     document.querySelector('main').setAttribute('inert', '');
 };
 
 const closeMenu = () => {
-    nav.classList.remove('header__nav--visible');
-    navList.classList.remove('header__list--visible');
-    navBtns.classList.remove('header__btn-container--visible');
-    document.querySelector('main').removeAttribute('inert');
     document.removeEventListener('keydown', trapFocus);
+    navList.classList.add('header__list--hidden');
+    navBtns.classList.add('header__btn-container--hidden');
+    nav.classList.remove('header__nav--open');
+    document.querySelector('main').removeAttribute('inert');
 };
 
 menuBtn.addEventListener('click', () => {
@@ -62,3 +62,6 @@ document.addEventListener('keydown', (e) => {
         menuBtn.setAttribute('aria-expanded', 'false');
     }
 });
+
+closeMenu();
+document.querySelector('.home-link').focus();

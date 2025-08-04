@@ -26,8 +26,7 @@ button {
     appearance: none;
 
     &:focus-visible {
-        outline: 2px solid v.$color-raisin-black;
-        outline-offset: 2px;
+        outline: 2px inset v.$color-raisin-black;
     }
 }
 

@@ -15,7 +15,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 10;
 
     @include m.breakpoint-up('medium') {
         flex-direction: row-reverse;
@@ -47,20 +47,19 @@
         @include m.breakpoint-up('large') {
             display: flex;
             align-items: center;
-            position: static;
-            gap: f.rem(252);
+            gap: f.rem(245);
         }
 
-        &--visible {
-            position: absolute;
+        &--open {
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            padding-top: f.rem(80);
+            bottom: 0;
+            background-color: rgba(v.$color-raisin-black, 0.9);
 
-            @include m.breakpoint-up('medium') {
+            @include m.breakpoint-up('large') {
                 position: static;
-                padding-top: 0;
                 background: transparent;
             }
         }
@@ -84,7 +83,8 @@
             right: f.rem(20);
 
             @include m.breakpoint-up('medium') {
-                position: static;
+                top: f.rem(32);
+                left: f.rem(68);
             }
         }
     }
@@ -100,43 +100,41 @@
 
     &__list {
         gap: f.rem(32);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: 1s ease-out 0s 1 normal both running nav-appear;
+        background-color: lighten(v.$color-cyclamen, 20%);
+        margin: f.rem(112) f.rem(32) 0;
+        padding-top: f.rem(32);
+        border-radius: f.rem(32) f.rem(32) 0 0;
+
+        @include m.breakpoint-up('medium') {
+            position: absolute;
+            top: f.rem(96);
+            left: 0;
+            right: 0;
+            padding: f.rem(48);
+            margin: f.rem(32) f.rem(160);
+            border-radius: f.rem(32);
+        }
 
         @include m.breakpoint-up('large') {
+            position: static;
             display: flex;
             flex-direction: row;
             background: transparent;
-            gap: f.rem(60);
+            animation: none;
+            padding: 0;
+            margin: 0;
+            gap: f.rem(56);
         }
 
-        &--visible {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            animation: 1s ease-out 0s 1 normal both running nav-appear;
-            background-color: lighten(v.$color-cyclamen, 20%);
-            margin: f.rem(32) f.rem(32) 0;
-            padding-top: f.rem(32);
-            border-radius: f.rem(32) f.rem(32) 0 0;
-
-            @include m.breakpoint-up('medium') {
-                position: absolute;
-                top: f.rem(96);
-                left: 0;
-                right: 0;
-                padding: f.rem(48);
-                margin: f.rem(32) f.rem(160);
-                border-radius: f.rem(32);
-            }
+        &--hidden {
+            display: none;
 
             @include m.breakpoint-up('large') {
-                position: static;
                 display: flex;
-                flex-direction: row;
-                background: transparent;
-                animation: none;
-                padding: 0;
-                margin: 0;
-                gap: f.rem(60);
             }
         }
     }
@@ -145,6 +143,7 @@
         color: rgba(v.$color-raisin-black, 0.5);
         font-size: f.rem(14);
         font-weight: bold;
+        border: 2px solid transparent;
 
         &:hover,
         &:focus {
@@ -154,19 +153,31 @@
 
         &:focus-visible {
             color: v.$color-gunmetal;
-            outline: 2px solid v.$color-gunmetal;
-            outline-offset: 2px;
+            border-color: v.$color-gunmetal;
         }
     }
 
     &__btn-container {
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        padding: f.rem(16);
+        animation: 1s ease-out 0s 1 normal both running nav-appear;
+        background-color: lighten(v.$color-cyclamen, 20%);
+        border-radius: 0 0 f.rem(32) f.rem(32);
+        margin: 0 f.rem(32) f.rem(32);
+        gap: f.rem(16);
 
         @include m.breakpoint-up('medium') {
             display: block;
             position: absolute;
             top: f.rem(32);
             right: f.rem(64);
+            gap: 0;
+            padding: 0;
+            margin: 0;
+            animation: none;
+            background: transparent;
         }
 
         @include m.breakpoint-up('large') {
@@ -174,29 +185,14 @@
             display: flex;
         }
 
-        &--visible {
-            display: flex;
-            justify-content: center;
-            align-items: baseline;
-            padding: f.rem(16);
-            animation: 1s ease-out 0s 1 normal both running nav-appear;
-            background-color: lighten(v.$color-cyclamen, 20%);
-            border-radius: 0 0 f.rem(32) f.rem(32);
-            margin: 0 f.rem(32) f.rem(32);
+        &--hidden {
+            display: none;
 
             @include m.breakpoint-up('medium') {
                 display: block;
-                position: absolute;
-                top: f.rem(32);
-                right: f.rem(64);
-                padding: 0;
-                margin: 0;
-                animation: none;
-                background: transparent;
             }
 
             @include m.breakpoint-up('large') {
-                position: static;
                 display: flex;
             }
         }
