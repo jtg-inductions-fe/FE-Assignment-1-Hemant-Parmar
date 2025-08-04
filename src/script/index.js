@@ -1,7 +1,7 @@
 const menuBtn = document.getElementById('menu-btn');
 const nav = document.getElementById('nav');
-const navList = document.getElementById('nav-list');
-const navBtns = document.getElementById('nav-buttons');
+const navList = document.querySelector('.header__list');
+const navBtns = document.querySelector('.header__btn-container');
 
 const focusable = nav.querySelectorAll(
     'a, button, [tabindex]:not([tabindex="-1"])',

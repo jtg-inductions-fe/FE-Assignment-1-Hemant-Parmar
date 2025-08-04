@@ -7,30 +7,45 @@
 
 // Generic button class
 .btn {
-    height: f.rem(48);
-    border-radius: f.rem(24);
     cursor: pointer;
-    line-height: normal;
+    height: f.rem(48);
     border: none;
-    font-weight: 500;
+    border-radius: f.rem(24);
+    font-size: f.rem(14);
+    font-weight: bold;
+    line-height: normal;
     transition: all 0.2s ease;
 
     &:focus-visible {
-        outline: 2px solid v.$color-iris;
-        outline-offset: -2px;
+        outline: 2px inset v.$color-iris;
+    }
+
+    &:hover {
+        box-shadow: 0 5px 10px rgba(v.$color-black, 0.5);
     }
 }
 
 .btn-primary {
     @extend .btn;
 
-    color: white;
+    color: v.$color-white;
     background-color: v.$color-iris;
-    border: none;
+
+    &:hover,
+    &:focus {
+        background-color: v.$color-white;
+        color: v.$color-iris;
+    }
 }
 
 .btn-secondary {
     @extend .btn;
 
     color: v.$color-gunmetal;
+
+    &:hover,
+    &:focus {
+        background-color: rgba(v.$color-iris, 0.5);
+        color: v.$color-white;
+    }
 }

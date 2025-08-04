@@ -203,37 +203,16 @@
     }
 
     &__btn {
-        font-weight: bold;
-        font-size: f.rem(14);
-
-        &:hover {
-            box-shadow: 0 5px 10px rgba(v.$color-black, 0.5);
-        }
-
         &--secondary {
-            color: v.$color-gunmetal;
             padding-inline: f.rem(24);
 
             @include m.breakpoint-up('large') {
                 padding-inline: f.rem(32);
             }
-
-            &:hover,
-            &:focus {
-                background-color: rgba(v.$color-iris, 0.5);
-                color: v.$color-white;
-            }
         }
 
         &--primary {
-            color: v.$color-white;
             padding-inline: f.rem(32);
-
-            &:hover,
-            &:focus {
-                background-color: v.$color-white;
-                color: v.$color-iris;
-            }
         }
     }
 }
