@@ -3,6 +3,17 @@ const nav = document.getElementById('nav');
 const navList = document.querySelector('.header__list');
 const navBtns = document.querySelector('.header__btn-container');
 
+const homeLink = document.querySelector('.home-link');
+if (homeLink) {
+    homeLink.focus();
+}
+
+// Early exit if required elements are missing
+if (!menuBtn || !nav || !navList || !navBtns) {
+    // eslint-disable-next-line no-console
+    console.warn('Required navigation elements not found');
+}
+
 const focusable = nav.querySelectorAll(
     'a, button, [tabindex]:not([tabindex="-1"])',
 );
@@ -64,4 +75,3 @@ document.addEventListener('keydown', (e) => {
 });
 
 closeMenu();
-document.querySelector('.home-link').focus();
