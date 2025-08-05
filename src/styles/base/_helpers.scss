@@ -1,7 +1,6 @@
 @use '../abstracts/functions' as f;
 @use '../abstracts/mixins' as m;
 @use '../abstracts/variables' as v;
-@use '../abstracts/variables' as v;
 @use 'sass:map';
 
 // -----------------------------------------------------------------------------
@@ -12,11 +11,11 @@
 .container {
     max-width: f.rem(1192); // Container's maximum width
     margin: 0 auto;
-}
-// Content container spanning full width on a large screen
-.container-large {
-    max-width: map.get(v.$breakpoint-size, 'large');
-    margin: 0 auto;
+
+    // Content container spanning full width on a large screen
+    &--wide {
+        max-width: map.get(v.$breakpoint-size, 'large');
+    }
 }
 
 .heading {
@@ -60,5 +59,9 @@
     @include m.breakpoint-up('medium') {
         font-size: f.rem(18);
     }
-}
 
+    &--dark {
+        font-size: f.rem(18);
+        color: v.$color-raisin-black;
+    }
+}
