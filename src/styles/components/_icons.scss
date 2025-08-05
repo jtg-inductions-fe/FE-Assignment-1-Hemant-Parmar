@@ -1,0 +1,13 @@
+@use '../abstracts/variables' as v;
+
+.location-pin-icon {
+    background-color: v.$color-giants-orange;
+}
+
+.calendar-icon {
+    background-color: v.$color-sunglow;
+}
+
+.ticket-icon {
+    background-color: v.$color-cyclamen;
+}

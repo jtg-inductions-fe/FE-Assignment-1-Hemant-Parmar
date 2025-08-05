@@ -56,9 +56,14 @@
     color: rgba(v.$color-raisin-black, 0.5);
     font-size: f.rem(16);
     line-height: 160%;
+    text-align: center;
 
     @include m.breakpoint-up('medium') {
         font-size: f.rem(18);
+    }
+
+    @include m.breakpoint-up('large') {
+        text-align: left;
     }
 
     &--dark {
