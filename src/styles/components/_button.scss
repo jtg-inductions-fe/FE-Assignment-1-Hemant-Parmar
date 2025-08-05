@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
 
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
@@ -6,27 +7,46 @@
 
 // Generic button class
 .btn {
-    height: 2em;
-    width: auto;
-    border-radius: 1em;
     cursor: pointer;
+    height: f.rem(48);
+    border: 1px solid transparent;
+    border-radius: f.rem(24);
+    font-size: f.rem(14);
+    font-weight: bold;
+    line-height: normal;
+    transition: all 0.2s ease;
 
-    &:focus-visible {
-        outline: 2px solid v.$color-raisin-black;
-        outline-offset: 2px;
+    &:focus {
+        border-color: v.$color-iris;
+    }
+
+    &:hover {
+        box-shadow: 0 5px 10px rgba(v.$color-black, 0.5);
     }
 }
 
 .btn-primary {
     @extend .btn;
 
-    color: white;
+    color: v.$color-white;
     background-color: v.$color-iris;
-    border: none;
+
+    &:hover,
+    &:focus {
+        background-color: v.$color-white;
+        color: v.$color-iris;
+    }
 }
 
 .btn-secondary {
     @extend .btn;
 
     color: v.$color-gunmetal;
+    background-color: v.$color-white;
+
+    &:hover,
+    &:focus {
+        background-color: rgba(v.$color-iris, 0.5);
+        color: v.$color-white;
+    }
 }
