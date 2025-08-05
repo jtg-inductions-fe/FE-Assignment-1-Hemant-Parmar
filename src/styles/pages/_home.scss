@@ -444,3 +444,116 @@
         }
     }
 }
+
+.key-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: f.rem(77);
+    gap: f.rem(107);
+
+    @include m.breakpoint-up('medium') {
+        margin-top: f.rem(95);
+        gap: f.rem(72);
+    }
+
+    @include m.breakpoint-up('large') {
+        margin-top: 0;
+        padding-left: f.rem(118);
+        flex-direction: row-reverse;
+        align-items: flex-start;
+    }
+
+    &__img {
+        padding-inline: f.rem(40);
+
+        @include m.breakpoint-up('large') {
+            flex-shrink: 0;
+            padding-inline: 0;
+            margin-top: f.rem(7);
+        }
+    }
+
+    &__content {
+        padding-inline: f.rem(48);
+
+        @include m.breakpoint-up('medium') {
+            padding-inline: f.rem(96);
+        }
+
+        @include m.breakpoint-up('large') {
+            padding-inline: 0;
+            margin-top: f.rem(11);
+        }
+    }
+
+    &__subheading {
+        margin-top: f.rem(16);
+        letter-spacing: f.rem(-1);
+    }
+
+    &__text {
+        margin-top: f.rem(32);
+        letter-spacing: f.rem(0.2);
+    }
+
+    &__card-container {
+        margin-top: f.rem(32);
+        display: flex;
+        flex-direction: column;
+        gap: f.rem(8);
+
+        @include m.breakpoint-up('medium') {
+            margin-top: f.rem(60);
+            gap: 0;
+        }
+    }
+
+    &__card {
+        padding: f.rem(32);
+        display: flex;
+        flex-direction: column;
+        border: 1px solid transparent;
+        border-radius: f.rem(32);
+        gap: f.rem(32);
+
+        &:hover,
+        &:focus {
+            border-color: rgba(v.$color-raisin-black, 0.1);
+        }
+
+        @include m.breakpoint-up('medium') {
+            flex-direction: row;
+        }
+    }
+
+    &__card-img {
+        width: f.rem(100);
+        height: f.rem(100);
+        border-radius: f.rem(32);
+        padding: f.rem(26);
+    }
+
+    &__card-content {
+        @include m.breakpoint-up('medium') {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__card-title {
+        color: v.$color-raisin-black;
+        font-size: f.rem(23);
+        font-weight: bold;
+        line-height: 120%;
+        letter-spacing: f.rem(-1);
+    }
+
+    &__card-text {
+        margin-top: f.rem(8);
+        color: rgba(v.$color-raisin-black, 0.5);
+        font-size: f.rem(18);
+        line-height: 160%;
+    }
+}
