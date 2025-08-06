@@ -86,28 +86,32 @@ closeMenu();
 
 // Swiper Code
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Keyboard } from 'swiper/modules';
 
 const swiperElement = document.querySelector('.swiper');
 
 (() => {
     window.swiper = new Swiper(swiperElement, {
-        modules: [Navigation, Pagination],
+        modules: [Navigation, Pagination, Keyboard],
         loop: true,
-        spaceBetween: 100,
+        spaceBetween: 10,
+        initialSlide: 1,
         centeredSlides: true,
         autoplay: {
             delay: 1000,
             disableOnInteraction: true,
         },
         pagination: {
-            el: '.swiper__pagination',
+            el: '.swiper-pagination',
             clickable: true,
             type: 'bullets',
         },
         navigation: {
             nextEl: '.swiper__button--next',
             prevEl: '.swiper__button--prev',
+        },
+        keyboard: {
+            enabled: true,
         },
     });
 })();

@@ -565,7 +565,16 @@
     text-align: center;
     gap: f.rem(64);
     margin-top: f.rem(68);
-    margin-bottom: f.rem(1000); //test
+    margin-bottom: f.rem(100); //test
+
+    @include m.breakpoint-up('medium') {
+        background: no-repeat center/125%
+            url('../../../public/assets/images/testimonials-background-image.svg');
+
+        margin-top: f.rem(127);
+        gap: f.rem(55);
+        align-items: center;
+    }
 
     &__header {
         display: flex;
@@ -585,14 +594,29 @@
         }
     }
 
-    &__slides-container {
+    &__carousel-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background: transparent;
+
+        @include m.breakpoint-up('medium') {
+            gap: f.rem(55);
+        }
+    }
+
+    &__carousel {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
 
         @include m.breakpoint-up('medium') {
-            flex-wrap: nowrap;
+            max-width: f.rem(584);
         }
+    }
+
+    &__slides {
+        max-width: f.rem(584);
     }
 
     &__slide {
@@ -617,6 +641,10 @@
         font-size: f.rem(23);
         font-weight: bold;
         line-height: 120%;
+
+        @include m.breakpoint-up('medium') {
+            margin-top: f.rem(61);
+        }
     }
 
     &__user-name {
@@ -638,10 +666,20 @@
         font-size: f.rem(18);
         font-weight: 450;
         line-height: 160%;
+
+        @include m.breakpoint-up('medium') {
+            font-size: f.rem(23);
+            margin-top: f.rem(60);
+        }
     }
 
     &__bullets {
         margin-top: f.rem(64);
+        position: static;
+
+        @include m.breakpoint-up('medium') {
+            margin-top: f.rem(56);
+        }
     }
 
     &__arrow {
@@ -660,6 +698,9 @@
 
         @include m.breakpoint-up('medium') {
             order: 0;
+            max-width: f.rem(100);
+            height: f.rem(100);
+            margin-top: f.rem(140);
         }
     }
 }
