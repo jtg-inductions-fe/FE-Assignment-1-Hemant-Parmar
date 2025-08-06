@@ -83,3 +83,31 @@ largeMediaQuery.addEventListener('change', closeMenu);
 mediumMediaQuery.addEventListener('change', closeMenu);
 
 closeMenu();
+
+// Swiper Code
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
+const swiperElement = document.querySelector('.swiper');
+
+(() => {
+    window.swiper = new Swiper(swiperElement, {
+        modules: [Navigation, Pagination],
+        loop: true,
+        spaceBetween: 100,
+        centeredSlides: true,
+        autoplay: {
+            delay: 1000,
+            disableOnInteraction: true,
+        },
+        pagination: {
+            el: '.swiper__pagination',
+            clickable: true,
+            type: 'bullets',
+        },
+        navigation: {
+            nextEl: '.swiper__button--next',
+            prevEl: '.swiper__button--prev',
+        },
+    });
+})();

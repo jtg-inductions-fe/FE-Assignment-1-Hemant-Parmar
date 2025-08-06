@@ -1,0 +1,22 @@
+@use '../abstracts/functions' as f;
+
+@import url('../../../node_modules/swiper/swiper.scss');
+@import url('../../../node_modules/swiper/modules/navigation.scss');
+@import url('../../../node_modules/swiper/modules/pagination.scss');
+
+// swiper custom configurations
+:root {
+    --swiper-pagination-bullet-size: 24px;
+    --swiper-pagination-bullet-horizontal-gap: 12px;
+}
+
+// You can add custom styles if needed
+.swiper {
+    max-width: 100%;
+
+    &-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
