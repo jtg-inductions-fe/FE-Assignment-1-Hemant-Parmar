@@ -731,3 +731,109 @@
         }
     }
 }
+
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    padding-inline: f.rem(16);
+    text-align: center;
+    gap: f.rem(64);
+    margin-top: f.rem(68);
+    margin-bottom: f.rem(1000); //test
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: f.rem(16);
+    }
+
+    &__heading {
+        @include m.breakpoint-up('large') {
+            text-align: center;
+        }
+    }
+
+    &__subheading {
+        @include m.breakpoint-up('large') {
+            text-align: center;
+        }
+    }
+
+    &__slides-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include m.breakpoint-up('medium') {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__user-img {
+        width: f.rem(128);
+        height: f.rem(128);
+        border-radius: f.rem(64);
+        overflow: hidden;
+        object-position: center;
+    }
+
+    &__user-info {
+        margin-top: f.rem(68);
+        color: rgba(v.$color-raisin-black, 0.75);
+        text-overflow: ellipsis;
+        font-size: f.rem(23);
+        font-weight: bold;
+        line-height: 120%;
+    }
+
+    &__user-name {
+        color: v.$color-giants-orange;
+        font-size: f.rem(28);
+        letter-spacing: f.rem(1);
+    }
+
+    &__user-rating {
+        margin-top: f.rem(34);
+        display: flex;
+        justify-content: center;
+        gap: f.rem(20);
+    }
+
+    &__user-review {
+        margin-top: f.rem(68);
+        color: rgba(v.$color-raisin-black, 0.75);
+        font-size: f.rem(18);
+        font-weight: 450;
+        line-height: 160%;
+    }
+
+    &__bullets {
+        margin-top: f.rem(64);
+    }
+
+    &__arrow {
+        margin-top: f.rem(45);
+        order: 1;
+        max-width: f.rem(64);
+        height: f.rem(64);
+        border-radius: f.rem(50);
+        border: 1px solid rgba(v.$color-raisin-black, 0.1);
+        background-color: v.$color-white;
+
+        &:hover {
+            background-color: v.$color-iris;
+            box-shadow: 0 5px 5px rgba(v.$color-raisin-black, 0.5);
+        }
+
+        @include m.breakpoint-up('medium') {
+            order: 0;
+        }
+    }
+}
