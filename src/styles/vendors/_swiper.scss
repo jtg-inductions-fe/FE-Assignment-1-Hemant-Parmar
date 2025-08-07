@@ -10,14 +10,8 @@
     --swiper-pagination-bullet-inactive-color: #1918258f; // Raisin Black color with 50% opacity
 }
 
-// You can add custom styles if needed
+// Custom styles that override swiper's default ones
 .swiper {
     max-width: 100%;
     height: 100%;
-
-    &-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 }
