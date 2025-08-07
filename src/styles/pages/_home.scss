@@ -577,15 +577,27 @@
     text-align: center;
     gap: f.rem(64);
     margin-top: f.rem(68);
-    margin-bottom: f.rem(100); //test
 
     @include m.breakpoint-up('medium') {
-        background: no-repeat center/125%
-            url('../../../public/assets/images/testimonials-background-image.svg');
-
         margin-top: f.rem(127);
         gap: f.rem(55);
         align-items: center;
+
+        background:
+            linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8))
+                repeat top,
+            url('../../../public/assets/images/testimonials-background-image.svg')
+                no-repeat f.rem(-100) f.rem(-190);
+        background-size: 100%, 125%;
+    }
+
+    @include m.breakpoint-up('large') {
+        margin-top: f.rem(76);
+
+        background-size: 100%;
+        background-position:
+            0,
+            0 f.rem(-186);
     }
 
     &__header {
@@ -594,26 +606,17 @@
         gap: f.rem(16);
     }
 
-    &__heading {
-        @include m.breakpoint-up('large') {
-            text-align: center;
-        }
-    }
-
-    &__subheading {
-        @include m.breakpoint-up('large') {
-            text-align: center;
-        }
-    }
-
     &__carousel-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        background: transparent;
 
         @include m.breakpoint-up('medium') {
             gap: f.rem(55);
+        }
+
+        @include m.breakpoint-up('large') {
+            gap: f.rem(80);
         }
     }
 
@@ -625,16 +628,21 @@
         @include m.breakpoint-up('medium') {
             max-width: f.rem(584);
         }
+
+        @include m.breakpoint-up('large') {
+            max-width: none;
+        }
     }
 
     &__slides {
-        max-width: f.rem(584);
+        @include m.breakpoint-up('large') {
+            max-width: f.rem(690);
+        }
     }
 
     &__slide {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
     }
 
@@ -713,6 +721,10 @@
             max-width: f.rem(100);
             height: f.rem(100);
             margin-top: f.rem(140);
+        }
+
+        @include m.breakpoint-up('large') {
+            margin-top: f.rem(119);
         }
     }
 }

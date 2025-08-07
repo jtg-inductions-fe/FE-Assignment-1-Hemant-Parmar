@@ -84,21 +84,21 @@ mediumMediaQuery.addEventListener('change', closeMenu);
 
 closeMenu();
 
-// Swiper Code
+// Swiper Code to implement carousel for the testimonials section
 import Swiper from 'swiper';
-import { Navigation, Pagination, Keyboard } from 'swiper/modules';
+import { Navigation, Pagination, Keyboard, Autoplay } from 'swiper/modules';
 
 const swiperElement = document.querySelector('.swiper');
 
 (() => {
     window.swiper = new Swiper(swiperElement, {
-        modules: [Navigation, Pagination, Keyboard],
+        modules: [Navigation, Pagination, Keyboard, Autoplay],
         loop: true,
         spaceBetween: 10,
         initialSlide: 1,
         centeredSlides: true,
         autoplay: {
-            delay: 1000,
+            delay: 3000,
             disableOnInteraction: true,
         },
         pagination: {
