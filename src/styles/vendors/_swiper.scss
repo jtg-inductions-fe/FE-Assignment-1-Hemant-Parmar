@@ -1,6 +1,6 @@
-@import url('../../../node_modules/swiper/swiper.scss');
-@import url('../../../node_modules/swiper/modules/navigation.scss');
-@import url('../../../node_modules/swiper/modules/pagination.scss');
+@use '../../../node_modules/swiper/swiper';
+@use '../../../node_modules/swiper/modules/navigation';
+@use '../../../node_modules/swiper/modules/pagination';
 
 // swiper custom configurations (I am not able to use the abstracts here)
 :root {
