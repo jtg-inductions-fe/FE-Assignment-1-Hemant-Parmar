@@ -503,7 +503,10 @@
             </section>
 
             <!-- Newsletter section -->
-            <section class="newsletter container" id="newsletter">
+            <section
+                class="newsletter container container--wide"
+                id="newsletter"
+            >
                 <div class="newsletter__upper-triangle">
                     <img
                         src="assets/Icons/newsletter-triangular-figure.png"
@@ -511,38 +514,54 @@
                         aria-hidden="true"
                     />
                 </div>
-
-                <div class="newsletter__header">
-                    <h2 class="heading heading--centered">
-                        SUBSCRIBE TO OUR NEWSLETTER
-                    </h2>
-                    <h3 class="subheading subheading--centered">
-                        Prepare yourself & let's explore the beauty of the world
-                    </h3>
+                <div class="newsletter__flower-figure">
+                    <img
+                        src="assets/Icons/side-flower-figure.svg"
+                        alt=""
+                        aria-hidden="true"
+                    />
                 </div>
 
-                <form class="newsletter__form" action="">
-                    <div class="newsletter__input-container">
-                        <div class="newsletter__email-img">
-                            <img
-                                src="assets/Icons/mail-icon.svg"
-                                alt=""
-                                aria-hidden="true"
-                            />
-                        </div>
-                        <input
-                            type="text"
-                            name="email"
-                            class="newsletter__email-input"
-                            id="email-input"
-                            placeholder="Your Email"
-                        />
+                <div class="newsletter__content container">
+                    <div class="newsletter__header">
+                        <h2 class="heading heading--centered">
+                            SUBSCRIBE TO OUR NEWSLETTER
+                        </h2>
+                        <h3
+                            class="newsletter__subheading subheading subheading--centered"
+                        >
+                            Prepare yourself & let's explore the beauty of the
+                            world
+                        </h3>
                     </div>
 
-                    <button class="newsletter__btn btn-primary" type="submit">
-                        Subscribe
-                    </button>
-                </form>
+                    <form class="newsletter__form" action="">
+                        <div class="newsletter__input-container">
+                            <div class="newsletter__email-img">
+                                <img
+                                    src="assets/Icons/mail-icon.svg"
+                                    alt=""
+                                    aria-hidden="true"
+                                />
+                            </div>
+                            <input
+                                type="text"
+                                name="email"
+                                class="newsletter__email-input"
+                                id="email-input"
+                                placeholder="Your Email"
+                                required
+                            />
+                        </div>
+
+                        <button
+                            class="newsletter__btn btn-primary"
+                            type="submit"
+                        >
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
             </section>
         </main>
         <script type="module" src="./src/script/index.js"></script>
