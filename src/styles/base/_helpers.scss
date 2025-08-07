@@ -33,6 +33,12 @@
     @include m.breakpoint-up('large') {
         text-align: left;
     }
+
+    &--centered {
+        @include m.breakpoint-up('large') {
+            text-align: center;
+        }
+    }
 }
 
 .subheading {
@@ -49,6 +55,12 @@
     @include m.breakpoint-up('large') {
         font-size: f.rem(44);
         text-align: left;
+    }
+
+    &--centered {
+        @include m.breakpoint-up('large') {
+            text-align: center;
+        }
     }
 }
 
