@@ -569,7 +569,7 @@
                         </h3>
                     </div>
 
-                    <form class="newsletter__form" action="">
+                    <form class="newsletter__form" name="newsletter">
                         <div class="newsletter__input-container">
                             <div class="newsletter__email-img">
                                 <img
@@ -579,13 +579,14 @@
                                 />
                             </div>
                             <input
-                                type="text"
+                                type="email"
                                 name="email"
                                 class="newsletter__email-input"
                                 id="email-input"
                                 placeholder="Your Email"
                                 required
                             />
+                            <p class="newsletter__email-validation" hidden></p>
                         </div>
 
                         <button
