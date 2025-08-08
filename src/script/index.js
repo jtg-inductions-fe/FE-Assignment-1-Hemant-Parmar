@@ -115,3 +115,20 @@ const swiperElement = document.querySelector('.swiper');
         },
     });
 })();
+
+// To handle form submission
+const emailInput = document.newsletter.email;
+const emailValidation = document.querySelector('.newsletter__email-validation');
+
+document.forms.newsletter.onsubmit = () => {
+    alert(`Your submitted email is ${emailInput.value}`);
+};
+
+emailInput.addEventListener('input', () => {
+    if (document.newsletter.email.validity.valid) {
+        emailValidation.hidden = false;
+        emailValidation.innerHTML = '&#10004;'; // Unicode character for a tick
+    } else {
+        emailValidation.hidden = true;
+    }
+});
