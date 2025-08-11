@@ -1,7 +1,6 @@
 @use '../abstracts/variables' as v;
 @use '../abstracts/mixins' as m;
 @use '../abstracts/functions' as f;
-@use 'sass:color';
 
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
@@ -10,7 +9,7 @@
 .header {
     display: flex;
     justify-content: space-between;
-    padding: f.rem(40) f.rem(20) f.rem(40) f.rem(16);
+    padding: f.rem(39) f.rem(20) f.rem(41) f.rem(16);
     background-color: v.$color-white;
     position: sticky;
     top: 0;
@@ -18,50 +17,52 @@
     z-index: 10;
 
     @include m.breakpoint-up('medium') {
-        flex-direction: row-reverse;
-        padding: f.rem(32) f.rem(68);
+        padding: f.rem(36) f.rem(68) f.rem(28);
         align-items: center;
 
-        &::before {
+        &::before,
+        &::after {
             content: '';
             width: f.rem(40);
         }
     }
 
     @include m.breakpoint-up('large') {
-        flex-direction: row;
         padding: f.rem(65) f.rem(98) f.rem(34) f.rem(148);
 
-        &::before {
+        &::before,
+        &::after {
             display: none;
         }
     }
 
     &__main-logo {
         width: f.rem(40);
-        height: f.rem(47);
+        height: f.rem(40);
     }
 
     /* Navigation menu */
     &__nav {
+        position: absolute;
+        overflow: hidden;
+
+        @include m.breakpoint-up('medium') {
+            left: f.rem(68);
+        }
+
         @include m.breakpoint-up('large') {
+            position: static;
             display: flex;
             align-items: center;
             gap: f.rem(245);
+            background: transparent;
+            overflow: visible;
         }
 
         &--open {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(v.$color-raisin-black, 0.9);
-
-            @include m.breakpoint-up('large') {
-                position: static;
-                background: transparent;
-            }
+            inset: 0;
+            background-color: rgba(v.$color-raisin-black, 0.5);
         }
     }
 
@@ -70,6 +71,13 @@
         height: f.rem(40);
         background: url('/assets/Icons/hamburger-icon.svg') center/contain
             no-repeat;
+
+        @include m.breakpoint-up('medium') {
+            position: absolute;
+            top: f.rem(36);
+            left: f.rem(68);
+            z-index: 20;
+        }
 
         @include m.breakpoint-up('large') {
             display: none;
@@ -81,42 +89,29 @@
             position: absolute;
             top: f.rem(40);
             right: f.rem(20);
-
-            @include m.breakpoint-up('medium') {
-                top: f.rem(32);
-                left: f.rem(68);
-            }
-        }
-    }
-
-    @keyframes nav-appear {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
+            z-index: 20;
         }
     }
 
     &__list {
-        gap: f.rem(32);
+        position: absolute;
+        top: f.rem(112);
+        left: 30%;
+        right: 0;
+        transition: transform 0.5s ease-in-out;
+
         display: flex;
         flex-direction: column;
         align-items: center;
-        animation: 1s ease-out 0s 1 normal both running nav-appear;
-        background-color: lighten(v.$color-cyclamen, 20%);
-        margin: f.rem(112) f.rem(32) 0;
-        padding-top: f.rem(32);
-        border-radius: f.rem(32) f.rem(32) 0 0;
+        background-color: lighten(v.$color-cyclamen, 30%);
+        padding: f.rem(32) 0;
 
         @include m.breakpoint-up('medium') {
-            position: absolute;
             top: f.rem(96);
             left: 0;
             right: 0;
             padding: f.rem(48);
-            margin: f.rem(32) f.rem(160);
-            border-radius: f.rem(32);
+            margin: f.rem(32) 0;
         }
 
         @include m.breakpoint-up('large') {
@@ -124,18 +119,28 @@
             display: flex;
             flex-direction: row;
             background: transparent;
-            animation: none;
+            transform: none;
             padding: 0;
             margin: 0;
             gap: f.rem(56);
         }
 
         &--hidden {
-            display: none;
+            transform: translateX(100vw);
 
             @include m.breakpoint-up('large') {
                 display: flex;
+                transform: none;
             }
+        }
+    }
+
+    &__list-item {
+        width: 100%;
+        text-align: center;
+
+        @include m.breakpoint-up('large') {
+            width: auto;
         }
     }
 
@@ -144,6 +149,7 @@
         font-size: f.rem(14);
         font-weight: bold;
         border: 2px solid transparent;
+        padding: f.rem(16);
 
         &:hover,
         &:focus {
@@ -155,40 +161,50 @@
             color: v.$color-gunmetal;
             border-color: v.$color-gunmetal;
         }
+
+        @include m.breakpoint-up('large') {
+            padding: 0;
+        }
     }
 
     &__btn-container {
+        position: absolute;
+        left: 30%;
+        right: 0;
+        top: f.rem(360);
+        padding: 0 f.rem(16) f.rem(32);
+        transition: transform 0.5s ease-in-out;
+
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: baseline;
-        padding: f.rem(16);
-        animation: 1s ease-out 0s 1 normal both running nav-appear;
-        background-color: lighten(v.$color-cyclamen, 20%);
-        border-radius: 0 0 f.rem(32) f.rem(32);
-        margin: 0 f.rem(32) f.rem(32);
+        align-items: center;
+
+        background-color: lighten(v.$color-cyclamen, 30%);
         gap: f.rem(16);
 
         @include m.breakpoint-up('medium') {
+            position: fixed;
             display: block;
-            position: absolute;
             top: f.rem(32);
-            right: f.rem(64);
-            gap: 0;
+            left: auto;
+            right: f.rem(62);
             padding: 0;
-            margin: 0;
-            animation: none;
             background: transparent;
         }
 
         @include m.breakpoint-up('large') {
             position: static;
             display: flex;
+            flex-direction: row;
+            gap: 0;
         }
 
         &--hidden {
-            display: none;
+            transform: translateX(100vw);
 
             @include m.breakpoint-up('medium') {
+                transform: none;
                 display: block;
             }
 
@@ -199,16 +215,25 @@
     }
 
     &__btn {
-        &--secondary {
-            padding-inline: f.rem(24);
+        width: 100%;
 
+        @include m.breakpoint-up('medium') {
+            width: auto;
+        }
+
+        &--secondary {
+            @include m.breakpoint-up('medium') {
+                padding-inline: f.rem(24);
+            }
             @include m.breakpoint-up('large') {
                 padding-inline: f.rem(32);
             }
         }
 
         &--primary {
-            padding-inline: f.rem(32);
+            @include m.breakpoint-up('medium') {
+                padding-inline: f.rem(32);
+            }
         }
     }
 }
