@@ -436,10 +436,10 @@
         @include m.breakpoint-up('large') {
             display: block;
             position: absolute;
-            width: f.rem(280);
+            width: f.rem(257);
             height: f.rem(350);
             top: f.rem(306);
-            right: f.rem(-23);
+            right: 0;
             z-index: 1;
         }
     }
