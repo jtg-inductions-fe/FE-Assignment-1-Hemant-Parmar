@@ -79,6 +79,7 @@
         }
     }
 
+    $this: &;
     &__accordion {
         display: grid;
         grid-template-rows: auto 0fr;
@@ -87,6 +88,10 @@
         &:focus-within,
         &:hover {
             grid-template-rows: auto 1fr;
+
+            #{$this}__summary::after {
+                transform: rotate(180deg);
+            }
         }
 
         @include m.breakpoint-up('medium') {
