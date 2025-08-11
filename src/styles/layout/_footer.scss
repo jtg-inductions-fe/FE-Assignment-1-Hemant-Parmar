@@ -84,9 +84,7 @@
         display: grid;
         grid-template-rows: auto 0fr;
 
-        &:focus,
-        &:focus-within,
-        &:hover {
+        &--open {
             grid-template-rows: auto 1fr;
 
             #{$this}__summary::after {
