@@ -13,7 +13,7 @@
     position: relative;
 
     @include m.breakpoint-up('medium') {
-        padding-top: f.rem(66);
+        padding-top: f.rem(65);
     }
 
     @include m.breakpoint-up('large') {
@@ -78,7 +78,7 @@
         color: v.$color-cyclamen;
         font-size: f.rem(14);
         font-weight: bold;
-        line-height: 120%;
+        line-height: 1.2;
         letter-spacing: f.rem(-0.3);
 
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.07);
@@ -98,26 +98,24 @@
         color: v.$color-black;
         font-size: f.rem(38);
         font-weight: bold;
-        line-height: f.rem(48);
+        line-height: 1.25;
         margin-top: f.rem(16);
 
         @include m.breakpoint-up('medium') {
             margin-top: f.rem(43);
             font-size: f.rem(56);
             max-width: f.rem(600);
-            line-height: f.rem(70);
         }
 
         @include m.breakpoint-up('large') {
             font-size: f.rem(69);
             margin: 0;
-            line-height: 120%;
+            line-height: 1.2;
         }
-    }
 
-    &__em {
-        font-style: normal;
-        color: v.$color-cyclamen;
+        &--emphasized {
+            color: v.$color-cyclamen;
+        }
     }
 
     &__text {
@@ -191,7 +189,7 @@
         @include m.breakpoint-up('medium') {
             display: block;
             position: absolute;
-            top: f.rem(1155);
+            top: f.rem(1154);
             left: f.rem(38);
             pointer-events: none;
         }

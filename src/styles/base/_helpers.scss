@@ -16,7 +16,7 @@
     color: v.$color-cyclamen;
     font-size: f.rem(16);
     font-weight: bold;
-    line-height: 120%;
+    line-height: 1.2;
 
     @include m.breakpoint-up('medium') {
         font-size: f.rem(23);
@@ -27,7 +27,7 @@
     color: v.$color-raisin-black;
     font-size: f.rem(32);
     font-weight: bold;
-    line-height: 120%;
+    line-height: 1.2;
 
     @include m.breakpoint-up('medium') {
         font-size: f.rem(40);
@@ -41,7 +41,7 @@
 .text {
     color: rgba(v.$color-raisin-black, 0.5);
     font-size: f.rem(16);
-    line-height: 160%;
+    line-height: 1.6;
 
     @include m.breakpoint-up('medium') {
         font-size: f.rem(18);
