@@ -1,4 +1,6 @@
 @use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
 
 // -----------------------------------------------------------------------------
 // This file contains CSS helper classes.
@@ -8,4 +10,40 @@
 .container {
     max-width: f.rem(1192); // Container's maximum width
     margin: 0 auto;
+}
+
+.heading {
+    color: v.$color-cyclamen;
+    font-size: f.rem(16);
+    font-weight: bold;
+    line-height: 1.2;
+
+    @include m.breakpoint-up('medium') {
+        font-size: f.rem(23);
+    }
+}
+
+.subheading {
+    color: v.$color-raisin-black;
+    font-size: f.rem(32);
+    font-weight: bold;
+    line-height: 1.2;
+
+    @include m.breakpoint-up('medium') {
+        font-size: f.rem(40);
+    }
+
+    @include m.breakpoint-up('large') {
+        font-size: f.rem(44);
+    }
+}
+
+.text {
+    color: rgba(v.$color-raisin-black, 0.5);
+    font-size: f.rem(16);
+    line-height: 1.6;
+
+    @include m.breakpoint-up('medium') {
+        font-size: f.rem(18);
+    }
 }
