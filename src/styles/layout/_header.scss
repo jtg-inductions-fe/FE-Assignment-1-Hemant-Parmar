@@ -9,7 +9,7 @@
 .header {
     display: flex;
     justify-content: space-between;
-    padding: f.rem(39) f.rem(20) f.rem(41) f.rem(16);
+    padding: f.rem(39) f.rem(20) f.rem(48) f.rem(16);
     background-color: v.$color-white;
     position: sticky;
     top: 0;
@@ -17,7 +17,7 @@
     z-index: 10;
 
     @include m.breakpoint-up('medium') {
-        padding: f.rem(36) f.rem(68) f.rem(28);
+        padding: f.rem(36) f.rem(68);
         align-items: center;
 
         &::before,
