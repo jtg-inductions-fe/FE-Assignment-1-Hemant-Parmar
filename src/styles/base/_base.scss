@@ -24,10 +24,15 @@ button {
     background: none;
     cursor: pointer;
     appearance: none;
+
+    &:focus-visible {
+        outline: 2px inset v.$color-raisin-black;
+    }
 }
 
 ul {
     list-style: none;
+    display: block;
 }
 
 a {

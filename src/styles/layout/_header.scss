@@ -1,3 +1,239 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: f.rem(39) f.rem(20) f.rem(48) f.rem(16);
+    background-color: v.$color-white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    @include m.breakpoint-up('medium') {
+        padding: f.rem(36) f.rem(68);
+        align-items: center;
+
+        &::before,
+        &::after {
+            content: '';
+            width: f.rem(40);
+        }
+    }
+
+    @include m.breakpoint-up('large') {
+        padding: f.rem(65) f.rem(98) f.rem(34) f.rem(148);
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+
+    &__main-logo {
+        width: f.rem(40);
+        height: f.rem(40);
+    }
+
+    /* Navigation menu */
+    &__nav {
+        position: absolute;
+        overflow: hidden;
+
+        @include m.breakpoint-up('medium') {
+            left: f.rem(68);
+        }
+
+        @include m.breakpoint-up('large') {
+            position: static;
+            display: flex;
+            align-items: center;
+            gap: f.rem(245);
+            background: transparent;
+            overflow: visible;
+        }
+
+        &--open {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(v.$color-raisin-black, 0.5);
+        }
+    }
+
+    &__menu-btn {
+        width: f.rem(40);
+        height: f.rem(40);
+        background: url('/assets/Icons/hamburger-icon.svg') center/contain
+            no-repeat;
+
+        @include m.breakpoint-up('medium') {
+            position: absolute;
+            top: f.rem(36);
+            left: f.rem(68);
+            z-index: 20;
+        }
+
+        @include m.breakpoint-up('large') {
+            display: none;
+        }
+
+        // To switch the images on clicking
+        &[aria-expanded='true'] {
+            background-image: url('/assets/Icons/cross-icon.svg');
+            position: absolute;
+            top: f.rem(40);
+            right: f.rem(20);
+            z-index: 20;
+        }
+    }
+
+    &__list {
+        position: absolute;
+        top: f.rem(112);
+        left: 0;
+        right: 0;
+        transition: transform 0.5s ease-in-out;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: lighten(v.$color-cyclamen, 30%);
+        padding: f.rem(32) 0;
+
+        @include m.breakpoint-up('medium') {
+            top: f.rem(96);
+            left: 0;
+            right: 0;
+            padding: f.rem(48);
+            margin: f.rem(32) 0;
+        }
+
+        @include m.breakpoint-up('large') {
+            position: static;
+            display: flex;
+            flex-direction: row;
+            background: transparent;
+            transform: none;
+            padding: 0;
+            margin: 0;
+            gap: f.rem(56);
+        }
+
+        &--hidden {
+            transform: translateX(100vw);
+
+            @include m.breakpoint-up('large') {
+                display: flex;
+                transform: none;
+            }
+        }
+    }
+
+    &__list-item {
+        width: 100%;
+        text-align: center;
+
+        @include m.breakpoint-up('large') {
+            width: auto;
+        }
+    }
+
+    &__link {
+        color: rgba(v.$color-raisin-black, 0.5);
+        font-size: f.rem(14);
+        font-weight: bold;
+        border: 2px solid transparent;
+        padding: f.rem(16);
+
+        &:hover,
+        &:focus {
+            color: v.$color-gunmetal;
+            outline: none;
+        }
+
+        &:focus-visible {
+            color: v.$color-gunmetal;
+            border-color: v.$color-gunmetal;
+        }
+
+        @include m.breakpoint-up('large') {
+            padding: 0;
+        }
+    }
+
+    &__btn-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: f.rem(360);
+        padding: 0 f.rem(16) f.rem(32);
+        transition: transform 0.5s ease-in-out;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-color: lighten(v.$color-cyclamen, 30%);
+        gap: f.rem(16);
+
+        @include m.breakpoint-up('medium') {
+            position: fixed;
+            display: block;
+            top: f.rem(32);
+            left: auto;
+            right: f.rem(62);
+            padding: 0;
+            background: transparent;
+        }
+
+        @include m.breakpoint-up('large') {
+            position: static;
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+        }
+
+        &--hidden {
+            transform: translateX(100vw);
+
+            @include m.breakpoint-up('medium') {
+                transform: none;
+                display: block;
+            }
+
+            @include m.breakpoint-up('large') {
+                display: flex;
+            }
+        }
+    }
+
+    &__btn {
+        width: 100%;
+
+        @include m.breakpoint-up('medium') {
+            width: auto;
+        }
+
+        &--secondary {
+            @include m.breakpoint-up('medium') {
+                padding-inline: f.rem(24);
+            }
+            @include m.breakpoint-up('large') {
+                padding-inline: f.rem(32);
+            }
+        }
+
+        &--primary {
+            @include m.breakpoint-up('medium') {
+                padding-inline: f.rem(32);
+            }
+        }
+    }
+}
