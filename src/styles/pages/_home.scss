@@ -17,6 +17,7 @@
     }
 
     @include m.breakpoint-up('large') {
+        position: relative;
         grid-template-columns: f.rem(420) f.rem(772);
         padding: 0;
         margin-top: f.rem(60);
@@ -193,7 +194,6 @@
             left: f.rem(38);
             pointer-events: none;
         }
-
         @include m.breakpoint-up('large') {
             top: f.rem(659);
             left: f.rem(-85);
@@ -335,5 +335,112 @@
 
     &__card-description {
         font-size: f.rem(18);
+    }
+}
+
+.travel-point {
+    position: relative;
+    margin-top: f.rem(14);
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: f.rem(21.5);
+
+    @include m.breakpoint-up('medium') {
+        gap: f.rem(32);
+        margin-top: f.rem(16);
+    }
+
+    @include m.breakpoint-up('large') {
+        margin-top: f.rem(61);
+        flex-wrap: nowrap;
+        gap: 0;
+        padding-right: f.rem(116);
+    }
+
+    &__img {
+        padding: f.rem(16);
+
+        @include m.breakpoint-up('medium') {
+            padding: f.rem(46) f.rem(57) f.rem(32) f.rem(96);
+        }
+
+        @include m.breakpoint-up('large') {
+            flex-shrink: 0;
+            padding: f.rem(53) 0;
+            width: f.rem(871);
+            height: f.rem(697);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: f.rem(16);
+
+        @include m.breakpoint-up('medium') {
+            padding-inline: f.rem(96);
+            gap: f.rem(32);
+        }
+
+        @include m.breakpoint-up('large') {
+            padding: f.rem(85.6) 0;
+        }
+    }
+
+    &__subheading {
+        margin-top: f.rem(18);
+    }
+
+    &__text {
+        margin-top: f.rem(32);
+        padding-inline: f.rem(32);
+
+        @include m.breakpoint-up('large') {
+            padding: 0;
+        }
+    }
+
+    &__card-container {
+        display: grid;
+        padding: f.rem(16);
+        gap: f.rem(16);
+
+        @include m.breakpoint-up('medium') {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: f.rem(32);
+            padding: f.rem(32) 0;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: f.rem(16);
+        border: 1px solid rgba(v.$color-raisin-black, 0.1);
+        border-radius: f.rem(32);
+        padding: f.rem(35) f.rem(32);
+    }
+
+    &__card-num {
+        font-size: f.rem(35);
+        font-weight: bold;
+        line-height: 1.2;
+        color: v.$color-giants-orange;
+    }
+
+    &__floating-img {
+        display: none;
+
+        @include m.breakpoint-up('large') {
+            display: block;
+            position: absolute;
+            width: f.rem(257);
+            height: f.rem(350);
+            top: f.rem(306);
+            right: 0;
+            z-index: 1;
+        }
     }
 }

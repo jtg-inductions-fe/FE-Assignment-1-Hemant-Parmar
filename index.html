@@ -69,9 +69,9 @@
         </header>
 
         <!-- Main content -->
-        <main class="container">
+        <main>
             <!-- Hero section  -->
-            <section class="hero" id="hero">
+            <section class="hero container" id="hero">
                 <div class="hero__gradient"></div>
 
                 <div class="hero__img">
@@ -126,7 +126,7 @@
             </section>
 
             <!-- Clients section -->
-            <section class="clients">
+            <section class="clients container">
                 <div class="clients__img">
                     <img
                         src="assets/Icons/tripadvisor-logo.svg"
@@ -152,7 +152,7 @@
             </section>
 
             <!-- Services section -->
-            <section class="services" id="services">
+            <section class="services container" id="services">
                 <div class="services__header">
                     <h2 class="heading">SERVICES</h2>
                     <h3 class="services__subheading subheading">
@@ -203,10 +203,55 @@
             </section>
 
             <!-- Travel point section -->
-            <section class="travel-point" id="travel-point"></section>
+            <section class="travel-point container--wide" id="travel-point">
+                <div class="travel-point__img">
+                    <img
+                        src="assets/images/discounted-price-image.png"
+                        alt="A girl sitting on a suitcase"
+                    />
+                </div>
+                <div class="travel-point__content">
+                    <div class="travel-point__header">
+                        <h2 class="heading">TRAVEL POINT</h2>
+                        <h3 class="travel-point__subheading subheading">
+                            We helping you find your dream location
+                        </h3>
+                        <p class="travel-point__text text">
+                            Contrary to popular belief, Lorem Ipsum is not
+                            simply random text. It has roots in a piece of
+                            classical Latin literature from 45 BC.
+                        </p>
+                    </div>
+                    <ul class="travel-point__card-container">
+                        <li class="travel-point__card">
+                            <h4 class="travel-point__card-num">500+</h4>
+                            <p class="text--dark">Holiday Package</p>
+                        </li>
+                        <li class="travel-point__card">
+                            <h4 class="travel-point__card-num">100</h4>
+                            <p class="text--dark">Luxury Hotel</p>
+                        </li>
+                        <li class="travel-point__card">
+                            <h4 class="travel-point__card-num">7</h4>
+                            <p class="text--dark">Premium Airlines</p>
+                        </li>
+                        <li class="travel-point__card">
+                            <h4 class="travel-point__card-num">2k+</h4>
+                            <p class="text--dark">Happy Customer</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="travel-point__floating-img">
+                    <img
+                        src="assets/Icons/travel-point-star-icon.png"
+                        alt=""
+                        aria-hidden="true"
+                    />
+                </div>
+            </section>
 
             <!-- Newsletter section -->
-            <section class="newsletter" id="newsletter"></section>
+            <section class="newsletter container" id="newsletter"></section>
         </main>
         <script type="module" src="./src/script/index.js"></script>
     </body>
