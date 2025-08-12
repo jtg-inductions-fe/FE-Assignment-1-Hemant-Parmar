@@ -546,7 +546,7 @@
         color: v.$color-raisin-black;
         font-size: f.rem(23);
         font-weight: bold;
-        line-height: 120%;
+        line-height: 1.2;
         letter-spacing: f.rem(-1);
     }
 
@@ -554,6 +554,6 @@
         margin-top: f.rem(8);
         color: rgba(v.$color-raisin-black, 0.5);
         font-size: f.rem(18);
-        line-height: 160%;
+        line-height: 1.6;
     }
 }
