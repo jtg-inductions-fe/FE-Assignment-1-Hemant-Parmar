@@ -28,8 +28,8 @@
         height: f.rem(348);
         top: f.rem(-36);
         left: f.rem(-33);
-        background: v.$color-giants-orange;
-        filter: blur(335px);
+        background: rgba(v.$color-giants-orange, 0.5);
+        filter: blur(300px);
         pointer-events: none;
         z-index: 11;
 
