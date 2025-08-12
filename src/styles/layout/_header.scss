@@ -96,7 +96,7 @@
     &__list {
         position: absolute;
         top: f.rem(112);
-        left: 30%;
+        left: 0;
         right: 0;
         transition: transform 0.5s ease-in-out;
 
@@ -169,7 +169,7 @@
 
     &__btn-container {
         position: absolute;
-        left: 30%;
+        left: 0;
         right: 0;
         top: f.rem(360);
         padding: 0 f.rem(16) f.rem(32);
