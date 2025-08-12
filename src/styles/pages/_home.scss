@@ -200,3 +200,29 @@
         }
     }
 }
+
+.clients {
+    padding: f.rem(44) 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: f.rem(32) f.rem(27);
+
+    @include m.breakpoint-up('medium') {
+        padding: f.rem(139) f.rem(192) f.rem(108);
+    }
+
+    @include m.breakpoint-up('large') {
+        padding: f.rem(122) 0 f.rem(103.38);
+        justify-content: space-between;
+    }
+
+    &__img {
+        display: flex;
+        height: f.rem(20);
+
+        @include m.breakpoint-up('medium') {
+            height: f.rem(32);
+        }
+    }
+}
