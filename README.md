@@ -67,23 +67,26 @@ To set up the project on your local environment, follow these steps:
     npm run lint
     ```
 
-7. **Login to Netlify**
+7. **Log in to Netlify**
 
     ```bash
     netlify login
     ```
 
-    You will be redirected to a browser for logging in with your credentials.
+    You will be redirected to a browser to authenticate with your Netlify account.
 
-8. **Initialize Netlify**
+8. **Initialize a Netlify site**
 
     ```bash
     netlify init
     ```
 
-    This command will connect or create a Netlify site in the current directory.
+    This command connects the current directory to a Netlify site (creating one if necessary).
 
 9. **Deploy on Netlify**
+
     ```bash
     netlify deploy
     ```
+
+    Follow the interactive prompts to choose your site and publish the latest build.
