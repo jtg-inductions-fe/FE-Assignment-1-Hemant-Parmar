@@ -30,7 +30,7 @@ const trapFocus = (e) => {
 // To make nav elements inert according to the screen sizes
 const addResponsiveInert = () => {
     if (largeMediaQuery.matches) return;
-    else if (mediumMediaQuery) navList.inert = true;
+    else if (mediumMediaQuery.matches) navList.inert = true;
     else nav.inert = true;
 };
 
