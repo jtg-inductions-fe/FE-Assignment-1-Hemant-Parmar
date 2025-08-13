@@ -132,3 +132,12 @@ emailInput.addEventListener('input', () => {
         emailValidation.hidden = true;
     }
 });
+
+// To implement the the opening and closing of the accordion
+const accordions = document.querySelectorAll('.footer__accordion');
+
+accordions.forEach((accordion) => {
+    accordion.addEventListener('click', function () {
+        this.classList.toggle('footer__accordion--open');
+    });
+});

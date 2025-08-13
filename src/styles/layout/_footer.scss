@@ -1,0 +1,146 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.footer {
+    padding: f.rem(95) f.rem(16) f.rem(35);
+
+    @include m.breakpoint-up('medium') {
+        padding: f.rem(64);
+    }
+
+    @include m.breakpoint-up('large') {
+        display: flex;
+        justify-content: space-between;
+        gap: f.rem(64);
+        padding: f.rem(202) 0 f.rem(60);
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        gap: f.rem(32);
+
+        @include m.breakpoint-up('large') {
+            flex: 1;
+        }
+    }
+
+    &__brand {
+        display: flex;
+        gap: f.rem(16);
+    }
+
+    &__brand-name {
+        color: v.$color-raisin-black;
+        font-weight: 900;
+        font-size: f.rem(24);
+        line-height: calc(5 / 3);
+    }
+
+    &__text {
+        text-align: left;
+
+        @include m.breakpoint-up('medium') {
+            font-size: f.rem(23);
+        }
+    }
+
+    &__socials {
+        display: flex;
+        gap: f.rem(32);
+
+        @include m.breakpoint-up('large') {
+            padding-top: f.rem(32);
+        }
+    }
+
+    // footer body
+    &__body {
+        margin-top: f.rem(96);
+        display: flex;
+        flex-direction: column;
+        gap: f.rem(71);
+
+        @include m.breakpoint-up('medium') {
+            margin-top: f.rem(64);
+            flex-direction: row;
+            justify-content: space-between;
+            gap: f.rem(32);
+        }
+
+        @include m.breakpoint-up('large') {
+            margin-top: 0;
+            flex: 1;
+        }
+    }
+
+    $this: &;
+    &__accordion {
+        display: grid;
+        grid-template-rows: auto 0fr;
+
+        &--open {
+            grid-template-rows: auto 1fr;
+
+            #{$this}__summary::after {
+                transform: rotate(180deg);
+            }
+        }
+
+        @include m.breakpoint-up('medium') {
+            grid-template-rows: auto 1fr;
+            flex: 1;
+            gap: f.rem(32);
+        }
+    }
+
+    &__summary {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        color: v.$color-raisin-black;
+        font-weight: bold;
+        font-size: f.rem(23);
+        line-height: 1.2;
+
+        &::after {
+            display: block;
+            content: '';
+            background-image: url('/assets/Icons/arrow-circle-down.svg');
+            background-size: cover;
+            width: f.rem(24);
+            height: f.rem(24);
+
+            @include m.breakpoint-up('medium') {
+                display: none;
+            }
+        }
+    }
+
+    &__content {
+        overflow: hidden;
+
+        @include m.breakpoint-up('medium') {
+            display: flex;
+            flex-direction: column;
+            gap: f.rem(32);
+        }
+    }
+
+    &__info-text {
+        font-size: f.rem(18);
+        line-height: 1.6;
+        text-align: left;
+
+        @include m.breakpoint-up('large') {
+            letter-spacing: f.rem(1);
+        }
+    }
+}

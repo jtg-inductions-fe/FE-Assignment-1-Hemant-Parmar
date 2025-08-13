@@ -870,6 +870,7 @@
         display: none;
 
         @include m.breakpoint-up('medium') {
+            pointer-events: none;
             display: block;
             position: absolute;
             top: f.rem(60);
@@ -885,6 +886,7 @@
         display: none;
 
         @include m.breakpoint-up('medium') {
+            pointer-events: none;
             display: block;
             position: absolute;
             bottom: f.rem(548);
