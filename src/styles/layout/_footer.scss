@@ -39,7 +39,7 @@
         color: v.$color-raisin-black;
         font-weight: 900;
         font-size: f.rem(24);
-        line-height: f.rem(40);
+        line-height: calc(5 / 3);
     }
 
     &__text {
@@ -108,7 +108,7 @@
         color: v.$color-raisin-black;
         font-weight: bold;
         font-size: f.rem(23);
-        line-height: 120%;
+        line-height: 1.2;
 
         &::after {
             display: block;
@@ -136,7 +136,7 @@
 
     &__info-text {
         font-size: f.rem(18);
-        line-height: 160%;
+        line-height: 1.6;
         text-align: left;
 
         @include m.breakpoint-up('large') {
