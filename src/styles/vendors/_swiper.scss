@@ -4,8 +4,8 @@
 
 // swiper custom configurations (I am not able to use the abstracts here)
 :root {
-    --swiper-pagination-bullet-size: 24px;
-    --swiper-pagination-bullet-horizontal-gap: 12px;
+    --swiper-pagination-bullet-size: 1.5rem; // f.rem(24)
+    --swiper-pagination-bullet-horizontal-gap: 0.75rem; // f.rem(12)
     --swiper-pagination-color: #f85e9f; // Cyclamen color
     --swiper-pagination-bullet-inactive-color: #1918258f; // Raisin Black color with 50% opacity
 }
