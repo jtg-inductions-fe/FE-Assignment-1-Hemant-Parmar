@@ -1,0 +1,17 @@
+@use '../../../node_modules/swiper/swiper';
+@use '../../../node_modules/swiper/modules/navigation';
+@use '../../../node_modules/swiper/modules/pagination';
+
+// swiper custom configurations (I am not able to use the abstracts here)
+:root {
+    --swiper-pagination-bullet-size: 1.5rem; // f.rem(24)
+    --swiper-pagination-bullet-horizontal-gap: 0.75rem; // f.rem(12)
+    --swiper-pagination-color: #f85e9f; // Cyclamen color
+    --swiper-pagination-bullet-inactive-color: #1918258f; // Raisin Black color with 50% opacity
+}
+
+// Custom styles that override swiper's default ones
+.swiper {
+    max-width: 100%;
+    height: 100%;
+}
