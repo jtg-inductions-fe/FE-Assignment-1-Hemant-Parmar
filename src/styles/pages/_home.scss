@@ -584,7 +584,10 @@
         align-items: center;
 
         background:
-            linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8))
+            linear-gradient(
+                    rgba(v.$color-white, 0.8),
+                    rgba(v.$color-white, 0.8)
+                )
                 repeat top,
             url('/assets/images/testimonials-background-image.svg') no-repeat
                 f.rem(-100) f.rem(-190);

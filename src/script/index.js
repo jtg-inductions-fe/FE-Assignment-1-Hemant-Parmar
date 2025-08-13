@@ -91,7 +91,7 @@ import { Navigation, Pagination, Keyboard, Autoplay } from 'swiper/modules';
 const swiperElement = document.querySelector('.swiper');
 
 (() => {
-    window.swiper = new Swiper(swiperElement, {
+    swiperElement.swiper = new Swiper(swiperElement, {
         modules: [Navigation, Pagination, Keyboard, Autoplay],
         loop: true,
         spaceBetween: 10,
@@ -101,6 +101,9 @@ const swiperElement = document.querySelector('.swiper');
             delay: 3000,
             disableOnInteraction: true,
         },
+        keyboard: {
+            enabled: true,
+        },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -109,9 +112,6 @@ const swiperElement = document.querySelector('.swiper');
         navigation: {
             nextEl: '.swiper__button--next',
             prevEl: '.swiper__button--prev',
-        },
-        keyboard: {
-            enabled: true,
         },
     });
 })();

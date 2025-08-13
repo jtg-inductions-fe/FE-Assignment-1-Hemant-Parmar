@@ -332,6 +332,7 @@
                 </div>
             </section>
 
+            <!-- Testimonials section  -->
             <section class="testimonials container container--wide">
                 <div class="testimonials__header">
                     <h2 class="testimonials_heading heading heading--centered">
@@ -347,20 +348,30 @@
                 <div class="testimonials__carousel-container">
                     <button
                         class="testimonials__arrow swiper__button swiper__button--prev"
+                        aria-controls="carousel"
+                        aria-roledescription="previous slide button"
                     >
                         <img
                             src="assets/Icons/left-arrow.svg"
-                            alt="switch to Previous"
+                            alt=""
+                            aria-hidden="true"
                         />
                     </button>
 
-                    <div class="testimonials__carousel swiper">
+                    <div
+                        class="testimonials__carousel swiper"
+                        id="carousel"
+                        aria-roledescription="carousel"
+                    >
                         <ul class="testimonials__slides swiper-wrapper">
-                            <li class="testimonials__slide swiper-slide">
+                            <li
+                                class="testimonials__slide swiper-slide"
+                                aria-roledescription="slide"
+                            >
                                 <div class="testimonials__user-img">
                                     <img
                                         src="assets/images/mark-smith-profile-picture.png"
-                                        alt="User Image"
+                                        alt="Profile picture of Mark Smith"
                                     />
                                 </div>
                                 <h5 class="testimonials__user-info">
@@ -368,7 +379,10 @@
                                         >Mark Smith</em
                                     >/Travel Enthusiast
                                 </h5>
-                                <ul class="testimonials__user-rating">
+                                <ul
+                                    class="testimonials__user-rating"
+                                    aria-label="5 star rating"
+                                >
                                     <li class="testimonials__rating-icon">
                                         <img
                                             src="assets/Icons/star-icon.svg"
@@ -412,11 +426,14 @@
                                     BC.
                                 </p>
                             </li>
-                            <li class="testimonials__slide swiper-slide">
+                            <li
+                                class="testimonials__slide swiper-slide"
+                                aria-roledescription="slide"
+                            >
                                 <div class="testimonials__user-img">
                                     <img
                                         src="assets/images/hemant-parmar-profile-picture.png"
-                                        alt="User Image"
+                                        alt="Profile picture of Hemant Parmar"
                                     />
                                 </div>
                                 <h5 class="testimonials__user-info">
@@ -424,7 +441,10 @@
                                         >Hemant Parmar</em
                                     >/Frontend Dev
                                 </h5>
-                                <ul class="testimonials__user-rating">
+                                <ul
+                                    class="testimonials__user-rating"
+                                    aria-label="3 star rating"
+                                >
                                     <li class="testimonials__rating-icon">
                                         <img
                                             src="assets/Icons/star-icon.svg"
@@ -454,11 +474,14 @@
                                     BC.
                                 </p>
                             </li>
-                            <li class="testimonials__slide swiper-slide">
+                            <li
+                                class="testimonials__slide swiper-slide"
+                                aria-roledescription="slide"
+                            >
                                 <div class="testimonials__user-img">
                                     <img
                                         src="assets/images/lex-fridman-profile-picture.png"
-                                        alt="User Image"
+                                        alt="Profile picture of Lex Friedman"
                                     />
                                 </div>
                                 <h5 class="testimonials__user-info">
@@ -466,7 +489,10 @@
                                         >Lex Friedman</em
                                     >/Podcast Host
                                 </h5>
-                                <ul class="testimonials__user-rating">
+                                <ul
+                                    class="testimonials__user-rating"
+                                    aria-label="2 star rating"
+                                >
                                     <li class="testimonials__rating-icon">
                                         <img
                                             src="assets/Icons/star-icon.svg"
@@ -498,10 +524,13 @@
 
                     <button
                         class="testimonials__arrow swiper__button swiper__button--next"
+                        aria-controls="carousel"
+                        aria-roledescription="next slide button"
                     >
                         <img
                             src="assets/Icons/right-arrow.svg"
-                            alt="switch to Next"
+                            alt=""
+                            aria-hidden="true"
                         />
                     </button>
                 </div>
