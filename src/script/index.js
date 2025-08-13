@@ -119,6 +119,7 @@ const swiperElement = document.querySelector('.swiper');
 // To handle form submission
 const emailInput = document.newsletter.email;
 const emailValidation = document.querySelector('.newsletter__email-validation');
+const submitBtn = document.querySelector('.newsletter__btn');
 
 document.forms.newsletter.onsubmit = () => {
     alert(`Your submitted email is ${emailInput.value}`);
@@ -128,7 +129,9 @@ emailInput.addEventListener('input', () => {
     if (document.newsletter.email.validity.valid) {
         emailValidation.hidden = false;
         emailValidation.innerHTML = '&#10004;'; // Unicode character for a tick
+        submitBtn.classList.remove('newsletter__btn--dull');
     } else {
         emailValidation.hidden = true;
+        submitBtn.classList.add('newsletter__btn--dull');
     }
 });
