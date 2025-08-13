@@ -660,7 +660,7 @@
         text-overflow: ellipsis;
         font-size: f.rem(23);
         font-weight: bold;
-        line-height: 120%;
+        line-height: 1.2;
 
         @include m.breakpoint-up('medium') {
             margin-top: f.rem(61);
@@ -685,7 +685,7 @@
         color: rgba(v.$color-raisin-black, 0.75);
         font-size: f.rem(18);
         font-weight: 450;
-        line-height: 160%;
+        line-height: 1.6;
 
         @include m.breakpoint-up('medium') {
             font-size: f.rem(23);
