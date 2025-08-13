@@ -532,6 +532,18 @@
         height: f.rem(100);
         border-radius: f.rem(32);
         padding: f.rem(26);
+
+        &--bg-giants-orange {
+            background-color: v.$color-giants-orange;
+        }
+
+        &--bg-sunglow {
+            background-color: v.$color-sunglow;
+        }
+
+        &--bg-cyclamen {
+            background-color: v.$color-cyclamen;
+        }
     }
 
     &__card-content {
